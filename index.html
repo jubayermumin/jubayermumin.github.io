@@ -7,7 +7,7 @@
     <meta name="author" content="Jubayer Mumin">
     <title>Jubayer Mumin | Personal Website</title>
 
-    <!-- Bootstrap 5 CSS (Modern Layout) -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome (Icons) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- CUSTOM STYLES (Replicating the look of the reference site) --- */
+        /* --- CUSTOM STYLES --- */
         body {
             font-family: 'Roboto', sans-serif;
             color: #555;
@@ -38,10 +38,10 @@
             color: #0a58ca;
         }
 
-        /* Full Height Intro Section */
+        /* --- Full Height Intro Section --- */
         #home {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); /* Background Image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -80,7 +80,37 @@
             transform: scale(1.1);
         }
 
-        /* Navbar */
+        /* --- Mouse Scroller Animation --- */
+        .mouse-icon {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            opacity: 0.8;
+        }
+        
+        .wheel {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: #fff;
+            border-radius: 2px;
+            animation: scroll 1.5s infinite;
+        }
+
+        @keyframes scroll {
+            0% { top: 5px; opacity: 1; }
+            100% { top: 25px; opacity: 0; }
+        }
+
+        /* --- Navbar --- */
         .navbar {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -90,14 +120,14 @@
             font-weight: 500;
             color: #333 !important;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-left: 15px;
         }
         .nav-link:hover {
             color: #0d6efd !important;
         }
 
-        /* Section Styling */
+        /* --- Section Styling --- */
         section {
             padding: 80px 0;
         }
@@ -121,26 +151,48 @@
             background-color: #0d6efd;
         }
 
-        /* About Section */
+        /* --- About Section --- */
         .profile-photo {
             width: 100%;
             max-width: 250px;
             border-radius: 50%;
             border: 5px solid #f0f0f0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-
-        .info-list li {
+        
+        .personal-info {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .personal-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .personal-info li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-check li {
+            position: relative;
+            padding-left: 30px;
             margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
         }
-        .info-list strong {
-            display: inline-block;
-            width: 120px;
+        .list-check li::before {
+            content: '\f00c'; /* FontAwesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #0d6efd;
         }
 
-        /* Timeline / Resume Section */
+        /* --- Timeline / Resume Section --- */
         .timeline {
             position: relative;
             list-style: none;
@@ -164,7 +216,7 @@
             padding-left: 60px;
         }
 
-        /* The dots on the timeline */
+        /* The rings/dots on the timeline */
         .timeline-marker {
             position: absolute;
             left: 11px;
@@ -173,21 +225,30 @@
             height: 20px;
             border-radius: 50%;
             background: #fff;
-            border: 4px solid #999999;
+            border: 4px solid #000; /* Black ring */
             z-index: 1;
         }
 
         .timeline-date {
             font-size: 0.9rem;
-            color: #999999;
+            color: #000; /* Black date */
             font-weight: 700;
             margin-bottom: 5px;
             text-transform: uppercase;
         }
 
+        /* Timeline Logos */
+        .timeline-logo {
+            max-height: 50px; 
+            max-width: 120px; 
+            margin-bottom: 10px;
+            display: block;
+        }
+
         .timeline-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             margin-bottom: 5px;
+            font-weight: 700;
         }
         
         .timeline-content h4 {
@@ -202,12 +263,22 @@
             margin-bottom: 0;
         }
 
-        /* Skills/Facts */
+        /* --- Skills/Facts --- */
         .bg-light-gray {
             background-color: #f8f9fa;
         }
 
-        /* Footer */
+        /* --- Publications List --- */
+        .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        /* --- Footer --- */
         footer {
             background-color: #1a1e23;
             color: #fff;
@@ -215,7 +286,7 @@
             text-align: center;
         }
         
-        /* Mobile adjustment */
+        /* --- Mobile Adjustment --- */
         @media (min-width: 768px) {
             .timeline::before {
                 left: 50%;
@@ -254,8 +325,11 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Research projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
                 </ul>
             </div>
         </div>
@@ -272,20 +346,21 @@
                 <div class="social-icons">
                     <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    
                     <!-- ResearchGate -->
                     <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                    
                     <!-- ORCID -->
                     <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                    
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    
-                    <!-- Google Scholar (KI Website) -->
+                    <!-- Google Scholar -->
                     <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Moving Mouse Animation -->
+        <div class="mouse-icon">
+            <div class="wheel"></div>
         </div>
     </section>
 
@@ -293,52 +368,95 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <!-- Replace the src below with a URL to your photo. 
-                         You can upload a photo to your GitHub repo and link it here. -->
+            <div class="row">
+                
+                <!-- Left Column: Photo & Details -->
+                <div class="col-md-4 text-center">
                     <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo">
-                </div>
-                <div class="col-md-8">
-                    <h3>Who am I?</h3>
-                    <p class="lead text-muted mb-4">
-                        I am a passionate professional dedicated to solving complex problems and building efficient solutions. 
-                        With a strong background in my field, I strive to continuously learn and apply new technologies.
-                        (Edit this text in the index.html file to describe yourself).
-                    </p>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled info-list">
-                                <li><strong>Name:</strong> Jubayer Mumin</li>
-                                <li><strong>Email:</strong> jubayermumin@example.com</li>
-                                <li><strong>Location:</strong> Your City, Country</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled info-list">
-                                <li><strong>Education:</strong> Your Degree</li>
-                                <li><strong>Language:</strong> English, Bengali</li>
-                                <li><strong>Freelance:</strong> Available</li>
-                            </ul>
+                    <div class="personal-info">
+                        <ul>
+                            <li><strong>Name:</strong> Jubayer Mumin</li>
+                            <li><strong>Location:</strong> Stockholm, Sweden</li>
+                            <li><strong>Email:</strong> jubayermumin@example.com</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary px-4"><i class="fas fa-download me-2"></i>Download CV</a>
                         </div>
                     </div>
+                </div>
+
+                <!-- Right Column: Bio -->
+                <div class="col-md-8 mt-4 mt-md-0">
+                    <p>I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
                     
-                    <div class="mt-4">
-                        <!-- Add link to your real CV PDF if you upload one -->
-                        <a href="#" class="btn btn-primary btn-lg px-4 me-2"><i class="fas fa-download me-2"></i>Download CV</a>
+                    <p>I have had the privilege of working with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. A defining moment in my career was leading and managing the COVID-19 vaccination campaigns in the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh. This hands-on experience not only honed my leadership skills but also ignited a deep sense of purpose in addressing health disparities faced by displaced populations.</p>
+
+                    <p>With a strong commitment to health equity and advocacy, my expertise lies in capacity building and empowering communities to respond effectively to health crises. I have actively participated in outbreak investigations and response efforts, leveraging my knowledge to help control and manage disease outbreaks.</p>
+
+                    <p>Immunization in humanitarian emergency is another key aspect of my proficiency, ensuring that even in the most challenging circumstances, life-saving vaccinations are administered to those in need.</p>
+
+                    <h5 class="mt-4 mb-3">A non-exhaustive list of topics that I am interested about:</h5>
+                    <ul class="list-check">
+                        <li>Real world evidence</li>
+                        <li>Causal inference</li>
+                        <li>Psychiatric epidemiology</li>
+                        <li>Global mental health</li>
+                        <li>Infectious disease epidemiology</li>
+                        <li>Nutrition and breastfeeding</li>
+                        <li>Information Theory</li>
+                        <li>Survival analysis</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="bg-light-gray">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="publication-item">
+                        <p>Kader, S. B., Shakurun, N., <strong>Mumin, J.</strong>, & Noor, N. (2025). Joint Effect of Sleep Duration and Sleep Quality on Self-Rated Health Among Canadian Adults: Estimating Relative Excess Risk due to Interaction (RERI) from a Nationwide Survey. <em>Frontiers in Public Health</em>, 13, 1632239.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Resume / Timeline Section -->
-    <section id="resume" class="bg-light-gray">
+    <!-- Research Projects Section (Placeholder) -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Research Projects</h2>
+            <p class="text-center text-muted">Details on research projects coming soon.</p>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching" class="bg-light-gray">
+        <div class="container">
+            <h2 class="section-title">Teaching</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p>Participated in teaching the following undergraduate courses at Karolinska Institute:</p>
+                    <ul>
+                        <li>Global Health (2XX066)</li>
+                        <li>Basvetenskap 6 Mikrobiologi och infektionsimmunologi (2LA005)</li>
+                    </ul>
+                    <p class="mt-4">I have designed and conducted training programs on vaccine-preventable disease surveillance and management of severe acute malnutrition for healthcare professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume / Timeline Section -->
+    <section id="resume">
         <div class="container">
             <h2 class="section-title">Resume</h2>
             
-<div class="timeline">
+            <div class="timeline">
                 
                 <!-- WORK (Right Side): Research Assistant -->
                 <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
@@ -398,7 +516,7 @@
                 <div class="timeline-item" style="margin-right: auto; margin-left: 0; padding-right: 40px; padding-left: 0; text-align: right;">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <img src="logo-nipsom.jpg" alt="NIPSOM" class="timeline-logo" style="margin-left: auto;">
+                        <img src="logo-nipsom.png" alt="NIPSOM" class="timeline-logo" style="margin-left: auto;">
 
                         <div class="timeline-date">2016 – 2018</div>
                         <h3>Master of Public Health (Health Service Management and Policy)</h3>
@@ -449,8 +567,9 @@
             </div>
         </div>
     </section>
+
     <!-- Skills / Tech Section -->
-    <section id="skills">
+    <section id="skills" class="bg-light-gray">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="row text-center">
@@ -478,18 +597,41 @@
         </div>
     </section>
 
+    <!-- Courses Placeholder Section -->
+    <section id="courses">
+        <div class="container">
+            <h2 class="section-title">Courses</h2>
+            <p class="text-center text-muted">Course details coming soon.</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <p class="mb-2">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
+            <p class="mb-3">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://github.com/jubayermumin"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jubayermumin/"><i class="fab fa-linkedin"></i></a>
+                <!-- GitHub -->
+                <a href="https://github.com/jubayermumin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                
+                <!-- ResearchGate -->
+                <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                
+                <!-- ORCID -->
+                <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS (for mobile menu) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
