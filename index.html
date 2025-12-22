@@ -268,10 +268,33 @@
             background-color: #f8f9fa;
         }
 
+        /* --- Language Card Styling --- */
+        .lang-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .lang-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .lang-level {
+            display: inline-block;
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
         /* --- Publications List --- */
         .publication-item {
-            margin-bottom: 10px; /* Reduced from 20px */
-            padding-bottom: 10px; /* Reduced from 20px */
+            margin-bottom: 10px; 
+            padding-bottom: 10px; 
             border-bottom: 1px solid #eee;
         }
         .publication-item:last-child {
@@ -329,7 +352,6 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Research projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
                 </ul>
             </div>
         </div>
@@ -613,22 +635,17 @@
             <h2 class="section-title">Skills</h2>
             <div class="row text-center">
                 <!-- Skill 1 -->
-                <div class="col-md-3 col-6 mb-4">
+                <div class="col-md-4 col-12 mb-4">
                     <i class="fas fa-heartbeat fa-3x mb-3 text-primary"></i>
                     <h5>Public Health Research</h5>
                 </div>
                 <!-- Skill 2 -->
-                <div class="col-md-3 col-6 mb-4">
+                <div class="col-md-4 col-12 mb-4">
                     <i class="fas fa-chart-bar fa-3x mb-3 text-primary"></i>
-                    <h5>Data Analysis</h5>
+                    <h5>Data Analysis (R, Stata, SPSS)</h5>
                 </div>
                 <!-- Skill 3 -->
-                <div class="col-md-3 col-6 mb-4">
-                    <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
-                    <h5>R, Stata, SPSS</h5>
-                </div>
-                <!-- Skill 4 -->
-                <div class="col-md-3 col-6 mb-4">
+                <div class="col-md-4 col-12 mb-4">
                     <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
                     <h5>Project Management</h5>
                 </div>
@@ -636,11 +653,44 @@
         </div>
     </section>
 
-    <!-- Courses Placeholder Section -->
-    <section id="courses">
+    <!-- Language Section -->
+    <section id="languages">
         <div class="container">
-            <h2 class="section-title">Courses</h2>
-            <p class="text-center text-muted">Course details coming soon.</p>
+            <h2 class="section-title">Languages</h2>
+            <div class="row justify-content-center text-center">
+                <!-- English -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>English</h5>
+                        <div class="lang-level">C1</div>
+                    </div>
+                </div>
+                <!-- Swedish -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Swedish</h5>
+                        <div class="lang-level">B2</div>
+                    </div>
+                </div>
+                <!-- Arabic -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Arabic</h5>
+                        <div class="lang-level">A1</div>
+                    </div>
+                </div>
+                <!-- Bengali -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Bengali</h5>
+                        <div class="lang-level">Native</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
