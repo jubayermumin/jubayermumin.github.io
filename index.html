@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jubayer Mumin - Personal Website and Resume">
+    <meta name="author" content="Jubayer Mumin">
+    <title>Jubayer Mumin | Personal Website</title>
+
+    <!-- Bootstrap 5 CSS (Modern Layout) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (Icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CUSTOM STYLES (Replicating the look of the reference site) --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #555;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0d6efd;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #0a58ca;
+        }
+
+        /* Full Height Intro Section */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); /* Background Image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .intro-sub {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .intro h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+        }
+        .social-icons a:hover {
+            color: #0d6efd; 
+            transform: scale(1.1);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-left: 15px;
+        }
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #0d6efd;
+        }
+
+        /* About Section */
+        .profile-photo {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 50%;
+            border: 5px solid #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .info-list strong {
+            display: inline-block;
+            width: 120px;
+        }
+
+        /* Timeline / Resume Section */
+        .timeline {
+            position: relative;
+            list-style: none;
+            padding: 0;
+        }
+        
+        /* The vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #e9ecef;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 60px;
+        }
+
+        /* The dots on the timeline */
+        .timeline-marker {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid #0d6efd;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #0d6efd;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .timeline-content p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Skills/Facts */
+        .bg-light-gray {
+            background-color: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1e23;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        /* Mobile adjustment */
+        @media (min-width: 768px) {
+            .timeline::before {
+                left: 50%;
+            }
+            .timeline-item {
+                padding-left: 0;
+                width: 50%;
+            }
+            .timeline-item:nth-child(odd) {
+                margin-left: auto;
+                padding-left: 40px;
+            }
+            .timeline-item:nth-child(even) {
+                margin-right: auto;
+                padding-right: 40px;
+                text-align: right;
+            }
+            .timeline-marker {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#page-top">JM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <section id="home">
+        <div class="container">
+            <div class="intro">
+                <div class="intro-sub">Hi! I am</div>
+                <h1>Jubayer Mumin</h1>
+                <div class="intro-sub">Welcome to my Personal Website</div>
+                
+                <div class="social-icons">
+                    <!-- Update these links with your actual profiles -->
+                    <a href="https://github.com/jubayermumin" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <!-- Replace the src below with a URL to your photo. 
+                         You can upload a photo to your GitHub repo and link it here. -->
+                    <img src="https://via.placeholder.com/250" alt="Jubayer Mumin" class="profile-photo">
+                </div>
+                <div class="col-md-8">
+                    <h3>Who am I?</h3>
+                    <p class="lead text-muted mb-4">
+                        I am a passionate professional dedicated to solving complex problems and building efficient solutions. 
+                        With a strong background in my field, I strive to continuously learn and apply new technologies.
+                        (Edit this text in the index.html file to describe yourself).
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled info-list">
+                                <li><strong>Name:</strong> Jubayer Mumin</li>
+                                <li><strong>Email:</strong> jubayermumin@example.com</li>
+                                <li><strong>Location:</strong> Your City, Country</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled info-list">
+                                <li><strong>Education:</strong> Your Degree</li>
+                                <li><strong>Language:</strong> English, Bengali</li>
+                                <li><strong>Freelance:</strong> Available</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <!-- Add link to your real CV PDF if you upload one -->
+                        <a href="#" class="btn btn-primary btn-lg px-4 me-2"><i class="fas fa-download me-2"></i>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume / Timeline Section -->
+    <section id="resume" class="bg-light-gray">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            
+            <div class="timeline">
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3>Job Title Here</h3>
+                        <h4>Company Name | Location</h4>
+                        <p>Description of your role and achievements. Explain what you did, the technologies you used, and the impact you had.</p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2023</div>
+                        <h3>Previous Job Title</h3>
+                        <h4>Previous Company | Location</h4>
+                        <p>Description of your responsibilities. Worked on X project, improved Y efficiency by Z%.</p>
+                    </div>
+                </div>
+
+                <!-- Education Item -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2020</div>
+                        <h3>Bachelor of Science</h3>
+                        <h4>University Name | Location</h4>
+                        <p>Major in Computer Science or related field. Graduated with Honors.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills / Tech Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-code fa-3x mb-3 text-primary"></i>
+                    <h5>Web Development</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-database fa-3x mb-3 text-primary"></i>
+                    <h5>Data Analysis</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fab fa-python fa-3x mb-3 text-primary"></i>
+                    <h5>Python</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-project-diagram fa-3x mb-3 text-primary"></i>
+                    <h5>Project Management</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://github.com/jubayermumin"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jubayermumin/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (for mobile menu) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
