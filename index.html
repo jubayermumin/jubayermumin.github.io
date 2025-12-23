@@ -192,7 +192,7 @@
             color: #0d6efd;
         }
 
-        /* --- Timeline / Resume Section (NEW DESIGN) --- */
+        /* --- Timeline / Resume Section (Strict Split) --- */
         .resume-section {
             background-color: #f8f9fa;
         }
@@ -210,7 +210,7 @@
             position: absolute;
             content: " ";
             width: 3px;
-            background-color: #e9ecef;
+            background-color: #dcdcdc; /* Visible line */
             left: 50%;
             margin-left: -1.5px;
         }
@@ -221,16 +221,6 @@
             width: 100%;
             float: left;
             clear: left;
-        }
-
-        .timeline > li:before,
-        .timeline > li:after {
-            content: " ";
-            display: table;
-        }
-
-        .timeline > li:after {
-            clear: both;
         }
 
         /* The Date Circle on the Line */
@@ -249,17 +239,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             line-height: 1.2;
             z-index: 10;
-            box-shadow: 0 0 0 5px #f8f9fa; /* Creates a gap effect around the line */
+            box-shadow: 0 0 0 5px #f8f9fa; /* Gap around date */
         }
 
-        /* The Content Panel */
+        /* Content Panel Wrapper */
         .timeline > li > .timeline-panel {
             width: 44%;
-            float: left;
+            float: left; /* Left by default (Education) */
             border: 1px solid #e0e0e0;
             background: #fff;
             border-radius: 4px;
@@ -269,73 +259,81 @@
             transition: all 0.3s ease;
         }
 
-        /* Hover effect on panel */
+        /* Hover Effect */
         .timeline > li > a:hover .timeline-panel {
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transform: translateY(-5px);
             border-color: #0d6efd;
         }
         
-        /* Remove default link styles for the wrapper */
         .timeline > li > a {
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
-        /* Arrows pointing to the center */
+        /* Arrow for Left Panel (Education) pointing Right */
         .timeline > li > .timeline-panel:before {
             position: absolute;
             top: 26px;
             right: -15px;
             display: inline-block;
             border-top: 15px solid transparent;
-            border-left: 15px solid #e0e0e0;
+            border-left: 15px solid #e0e0e0; /* Color of border */
             border-right: 0 solid #e0e0e0;
             border-bottom: 15px solid transparent;
             content: " ";
         }
-
         .timeline > li > .timeline-panel:after {
             position: absolute;
             top: 27px;
             right: -14px;
             display: inline-block;
             border-top: 14px solid transparent;
-            border-left: 14px solid #fff;
+            border-left: 14px solid #fff; /* Color of box bg */
             border-right: 0 solid #fff;
             border-bottom: 14px solid transparent;
             content: " ";
         }
 
-        /* Inverted (Right Side) Items */
+        /* RIGHT SIDE (Work Experience) Logic */
         .timeline > li.timeline-inverted > .timeline-panel {
-            float: right;
+            float: right; /* Force to right side */
         }
 
+        /* Arrow for Right Panel (Work) pointing Left */
         .timeline > li.timeline-inverted > .timeline-panel:before {
             border-left-width: 0;
             border-right-width: 15px;
             left: -15px;
             right: auto;
+            border-right-color: #e0e0e0;
         }
-
         .timeline > li.timeline-inverted > .timeline-panel:after {
             border-left-width: 0;
             border-right-width: 14px;
             left: -14px;
             right: auto;
+            border-right-color: #fff;
         }
         
-        /* Typography inside panel */
+        /* Clear floats */
+        .timeline > li:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Text Styling */
         .timeline-heading h3 {
             margin-top: 0;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #333;
+            font-weight: 700;
         }
         .timeline-heading h4 {
             margin-top: 5px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
             font-weight: 500;
         }
@@ -343,7 +341,7 @@
             margin-bottom: 0;
             margin-top: 10px;
             color: #777;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .timeline-logo {
             max-height: 40px;
@@ -351,7 +349,6 @@
             margin-bottom: 10px;
             display: block;
         }
-
 
         /* --- Skills/Facts --- */
         .bg-light-gray {
@@ -399,7 +396,7 @@
             text-align: center;
         }
         
-        /* --- Mobile Adjustment (Stacking the timeline) --- */
+        /* --- Mobile Adjustment (Stacking) --- */
         @media (max-width: 767px) {
             .timeline:before {
                 left: 20px;
@@ -413,24 +410,27 @@
             }
             .timeline > li > .timeline-panel {
                 float: right;
-                width: calc(100% - 70px);
+                width: calc(100% - 80px);
                 padding: 15px;
+                margin-left: 20px;
             }
             .timeline > li > .timeline-panel:before {
                 border-left-width: 0;
                 border-right-width: 15px;
                 left: -15px;
                 right: auto;
+                border-right-color: #e0e0e0;
             }
             .timeline > li > .timeline-panel:after {
                 border-left-width: 0;
                 border-right-width: 14px;
                 left: -14px;
                 right: auto;
+                border-right-color: #fff;
             }
             .timeline > li.timeline-inverted > .timeline-panel {
                 float: right;
-                width: calc(100% - 70px);
+                width: calc(100% - 80px);
             }
         }
     </style>
@@ -621,8 +621,8 @@
                 <div class="col-md-12">
                     <ul class="timeline">
                         
-                        <!-- Item 1: Research Assistant (Left/Standard) -->
-                        <li>
+                        <!-- 1. WORK (Right): Research Assistant -->
+                        <li class="timeline-inverted">
                             <div class="posted-date">
                                 <span>2025</span>
                             </div>
@@ -640,8 +640,8 @@
                             </a>
                         </li>
 
-                        <!-- Item 2: Master KI (Right/Inverted) -->
-                        <li class="timeline-inverted">
+                        <!-- 2. EDUCATION (Left): Master KI -->
+                        <li>
                             <div class="posted-date">
                                 <span>2023<br>2025</span>
                             </div>
@@ -659,8 +659,8 @@
                             </a>
                         </li>
 
-                        <!-- Item 3: WHO (Left/Standard) -->
-                        <li>
+                        <!-- 3. WORK (Right): WHO -->
+                        <li class="timeline-inverted">
                             <div class="posted-date">
                                 <span>2020<br>2023</span>
                             </div>
@@ -678,7 +678,7 @@
                             </a>
                         </li>
 
-                        <!-- Item 4: Nutrition Manager (Right/Inverted) -->
+                        <!-- 4. WORK (Right): Nutrition Manager -->
                         <li class="timeline-inverted">
                             <div class="posted-date">
                                 <span>2017<br>2020</span>
@@ -697,7 +697,7 @@
                             </a>
                         </li>
 
-                        <!-- Item 5: Master NIPSOM (Left/Standard) -->
+                        <!-- 5. EDUCATION (Left): Master NIPSOM -->
                         <li>
                             <div class="posted-date">
                                 <span>2016<br>2018</span>
@@ -716,7 +716,7 @@
                             </a>
                         </li>
 
-                        <!-- Item 6: Master Trainer (Right/Inverted) -->
+                        <!-- 6. WORK (Right): Master Trainer -->
                         <li class="timeline-inverted">
                             <div class="posted-date">
                                 <span>2016<br>2017</span>
@@ -735,8 +735,8 @@
                             </a>
                         </li>
 
-                        <!-- Item 7: Medical Doctor (Left/Standard) -->
-                        <li>
+                        <!-- 7. WORK (Right): Medical Doctor Internship -->
+                        <li class="timeline-inverted">
                             <div class="posted-date">
                                 <span>2014<br>2015</span>
                             </div>
@@ -754,8 +754,8 @@
                             </a>
                         </li>
 
-                        <!-- Item 8: Bachelor (Right/Inverted) -->
-                        <li class="timeline-inverted">
+                        <!-- 8. EDUCATION (Left): Bachelor -->
+                        <li>
                             <div class="posted-date">
                                 <span>2009<br>2015</span>
                             </div>
