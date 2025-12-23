@@ -192,76 +192,166 @@
             color: #0d6efd;
         }
 
-        /* --- Timeline / Resume Section --- */
-        .timeline {
-            position: relative;
-            list-style: none;
-            padding: 0;
+        /* --- Timeline / Resume Section (NEW DESIGN) --- */
+        .resume-section {
+            background-color: #f8f9fa;
         }
         
-        /* The vertical line */
-        .timeline::before {
-            content: '';
-            position: absolute;
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Central Vertical Line */
+        .timeline:before {
             top: 0;
             bottom: 0;
-            left: 20px;
-            width: 2px;
-            background: #e9ecef;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            padding-left: 60px;
-        }
-
-        /* The rings/dots on the timeline */
-        .timeline-marker {
             position: absolute;
-            left: 11px;
+            content: " ";
+            width: 3px;
+            background-color: #e9ecef;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline > li {
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+            float: left;
+            clear: left;
+        }
+
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        /* The Date Circle on the Line */
+        .timeline > li > .posted-date {
+            width: 80px;
+            height: 80px;
+            position: absolute;
             top: 0;
-            width: 20px;
-            height: 20px;
+            left: 50%;
+            margin-left: -40px;
+            background-color: #fff;
+            border: 3px solid #0d6efd;
             border-radius: 50%;
-            background: #fff;
-            border: 4px solid #000; /* Black ring */
-            z-index: 1;
-        }
-
-        .timeline-date {
-            font-size: 0.9rem;
-            color: #000; /* Black date */
+            text-align: center;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 5px;
-            text-transform: uppercase;
+            line-height: 1.2;
+            z-index: 10;
+            box-shadow: 0 0 0 5px #f8f9fa; /* Creates a gap effect around the line */
         }
 
-        /* Timeline Logos */
+        /* The Content Panel */
+        .timeline > li > .timeline-panel {
+            width: 44%;
+            float: left;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect on panel */
+        .timeline > li > a:hover .timeline-panel {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: #0d6efd;
+        }
+        
+        /* Remove default link styles for the wrapper */
+        .timeline > li > a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        /* Arrows pointing to the center */
+        .timeline > li > .timeline-panel:before {
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            display: inline-block;
+            border-top: 15px solid transparent;
+            border-left: 15px solid #e0e0e0;
+            border-right: 0 solid #e0e0e0;
+            border-bottom: 15px solid transparent;
+            content: " ";
+        }
+
+        .timeline > li > .timeline-panel:after {
+            position: absolute;
+            top: 27px;
+            right: -14px;
+            display: inline-block;
+            border-top: 14px solid transparent;
+            border-left: 14px solid #fff;
+            border-right: 0 solid #fff;
+            border-bottom: 14px solid transparent;
+            content: " ";
+        }
+
+        /* Inverted (Right Side) Items */
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+        
+        /* Typography inside panel */
+        .timeline-heading h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .timeline-heading h4 {
+            margin-top: 5px;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        .timeline-body p {
+            margin-bottom: 0;
+            margin-top: 10px;
+            color: #777;
+            font-size: 0.95rem;
+        }
         .timeline-logo {
-            max-height: 50px; 
-            max-width: 120px; 
+            max-height: 40px;
+            max-width: 100px;
             margin-bottom: 10px;
             display: block;
         }
 
-        .timeline-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        
-        .timeline-content h4 {
-            font-size: 1rem;
-            color: #777;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        .timeline-content p {
-            color: #666;
-            margin-bottom: 0;
-        }
 
         /* --- Skills/Facts --- */
         .bg-light-gray {
@@ -309,27 +399,38 @@
             text-align: center;
         }
         
-        /* --- Mobile Adjustment --- */
-        @media (min-width: 768px) {
-            .timeline::before {
-                left: 50%;
+        /* --- Mobile Adjustment (Stacking the timeline) --- */
+        @media (max-width: 767px) {
+            .timeline:before {
+                left: 20px;
             }
-            .timeline-item {
-                padding-left: 0;
-                width: 50%;
+            .timeline > li > .posted-date {
+                left: 20px;
+                width: 60px;
+                height: 60px;
+                margin-left: -30px;
+                font-size: 0.7rem;
             }
-            .timeline-item:nth-child(odd) {
-                margin-left: auto;
-                padding-left: 40px;
+            .timeline > li > .timeline-panel {
+                float: right;
+                width: calc(100% - 70px);
+                padding: 15px;
             }
-            .timeline-item:nth-child(even) {
-                margin-right: auto;
-                padding-right: 40px;
-                text-align: right;
+            .timeline > li > .timeline-panel:before {
+                border-left-width: 0;
+                border-right-width: 15px;
+                left: -15px;
+                right: auto;
             }
-            .timeline-marker {
-                left: 50%;
-                transform: translateX(-50%);
+            .timeline > li > .timeline-panel:after {
+                border-left-width: 0;
+                border-right-width: 14px;
+                left: -14px;
+                right: auto;
+            }
+            .timeline > li.timeline-inverted > .timeline-panel {
+                float: right;
+                width: calc(100% - 70px);
             }
         }
     </style>
@@ -513,118 +614,167 @@
     </section>
 
     <!-- Resume / Timeline Section -->
-    <section id="resume">
+    <section id="resume" class="resume-section">
         <div class="container">
             <h2 class="section-title">Resume</h2>
-            
-            <div class="timeline">
-                
-                <!-- WORK (Right Side): Research Assistant -->
-                <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <!-- LOGO HERE -->
-                        <img src="logo-ces.png" alt="Region Stockholm" class="timeline-logo">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="timeline">
                         
-                        <div class="timeline-date">July 2025 – Dec 2025</div>
-                        <h3>Research Assistant (Arbetspraktik)</h3>
-                        <h4>Centrum för epidemiologi och samhällsmedicin, Region Stockholm | Stockholm</h4>
-                        <p>Supporting the project on ADHD and relative age in Swedish adolescents and children. Responsibilities include formulating research questions, conducting a literature review and statistical analysis, writing manuscripts for journals, and presenting the findings to stakeholders.</p>
-                    </div>
+                        <!-- Item 1: Research Assistant (Left/Standard) -->
+                        <li>
+                            <div class="posted-date">
+                                <span>2025</span>
+                            </div>
+                            <a href="https://www.ces.regionstockholm.se/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-ces.png" alt="Region Stockholm" class="timeline-logo">
+                                        <h3>Research Assistant</h3>
+                                        <h4>Centrum för epidemiologi och samhällsmedicin, Region Stockholm</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Supporting the project on ADHD and relative age in Swedish adolescents and children. Responsibilities include formulating research questions, conducting a literature review and statistical analysis, writing manuscripts for journals, and presenting the findings to stakeholders.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 2: Master KI (Right/Inverted) -->
+                        <li class="timeline-inverted">
+                            <div class="posted-date">
+                                <span>2023<br>2025</span>
+                            </div>
+                            <a href="https://education.ki.se/bachelors-masters-studies/programmes-and-courses/masters-programme-in-public-health-sciences" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-ki.png" alt="Karolinska Institutet" class="timeline-logo">
+                                        <h3>Master of Medical Science</h3>
+                                        <h4>Karolinska Institutet | Stockholm, Sweden</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Public Health Epidemiology. Applied epidemiology and biostatistics, qualitative methods, systematic review, outcome evaluation of epidemiological interventions.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 3: WHO (Left/Standard) -->
+                        <li>
+                            <div class="posted-date">
+                                <span>2020<br>2023</span>
+                            </div>
+                            <a href="https://www.who.int/bangladesh/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-who.png" alt="WHO" class="timeline-logo">
+                                        <h3>Surveillance and Immunization Medical Officer</h3>
+                                        <h4>World Health Organization | Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Implementing immunization programs and vaccine-preventable disease surveillance, including COVID-19 mass vaccination campaigns. Supervised 25 staff members.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 4: Nutrition Manager (Right/Inverted) -->
+                        <li class="timeline-inverted">
+                            <div class="posted-date">
+                                <span>2017<br>2020</span>
+                            </div>
+                            <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
+                                        <h3>Nutrition and Health Program Manager</h3>
+                                        <h4>Action Against Hunger | Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Implemented community-based nutrition projects in the refugee camps. Supervised 85 staff members, conducted training for government and partner staff members.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 5: Master NIPSOM (Left/Standard) -->
+                        <li>
+                            <div class="posted-date">
+                                <span>2016<br>2018</span>
+                            </div>
+                            <a href="https://nipsom.gov.bd/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-nipsom.jpg" alt="NIPSOM" class="timeline-logo">
+                                        <h3>Master of Public Health</h3>
+                                        <h4>NIPSOM | Dhaka, Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Health Service Management and Policy. Health system and policy, healthcare and program management, epidemiology, and biostatistics.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 6: Master Trainer (Right/Inverted) -->
+                        <li class="timeline-inverted">
+                            <div class="posted-date">
+                                <span>2016<br>2017</span>
+                            </div>
+                            <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
+                                        <h3>Master Trainer</h3>
+                                        <h4>Action Against Hunger | Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Organized and conducted training sessions for government health staff on inpatient management of severe acute malnutrition as a part of a disaster preparedness project.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 7: Medical Doctor (Left/Standard) -->
+                        <li>
+                            <div class="posted-date">
+                                <span>2014<br>2015</span>
+                            </div>
+                            <a href="https://fmc.college.gov.bd/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo">
+                                        <h3>Medical Doctor</h3>
+                                        <h4>Faridpur Medical College Hospital | Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>A 52-week rotatory clinical and public health internship program in medicine, surgery, obstetrics and gynecology, pediatrics, and psychiatry.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Item 8: Bachelor (Right/Inverted) -->
+                        <li class="timeline-inverted">
+                            <div class="posted-date">
+                                <span>2009<br>2015</span>
+                            </div>
+                            <a href="https://fmc.college.gov.bd/" target="_blank">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo">
+                                        <h3>Bachelor of Medicine and Surgery</h3>
+                                        <h4>Faridpur Medical College | Bangladesh</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Medical Doctor degree. Medicine, surgery, obstetrics and gynecology, pharmacology, physiology, pathology, microbiology, community medicine.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
-
-                <!-- EDUCATION (Left Side): Master Medical Science -->
-                <div class="timeline-item" style="margin-right: auto; margin-left: 0; padding-right: 40px; padding-left: 0; text-align: right;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <!-- LOGO HERE (Aligned Right) -->
-                        <img src="logo-ki.png" alt="Karolinska Institutet" class="timeline-logo" style="margin-left: auto;">
-
-                        <div class="timeline-date">2023 – 2025</div>
-                        <h3>Master of Medical Science (Public Health Epidemiology)</h3>
-                        <h4>Karolinska Institutet | Stockholm, Sweden</h4>
-                        <p>120 credits. Applied epidemiology and biostatistics, qualitative methods, systematic review, outcome evaluation of epidemiological interventions.</p>
-                    </div>
-                </div>
-
-                <!-- WORK (Right Side): WHO -->
-                <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-who.png" alt="WHO" class="timeline-logo">
-                        
-                        <div class="timeline-date">2020 – 2023</div>
-                        <h3>Surveillance and Immunization Medical Officer</h3>
-                        <h4>World Health Organization | Cox’s Bazar, Bangladesh</h4>
-                        <p>Implementing immunization programs and vaccine-preventable disease surveillance, including COVID-19 mass vaccination campaigns. Supervised 25 staff members, coordinated with 15 implementing partners, government, and stakeholders.</p>
-                    </div>
-                </div>
-
-                <!-- WORK (Right Side): Nutrition Manager -->
-                <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
-
-                        <div class="timeline-date">2017 – 2020</div>
-                        <h3>Nutrition and Health Program Manager</h3>
-                        <h4>Action Against Hunger | Cox’s Bazar, Bangladesh</h4>
-                        <p>Implemented community-based nutrition projects in the refugee camps. Supervised 85 staff members, conducted training for government and partner staff members.</p>
-                    </div>
-                </div>
-
-                <!-- EDUCATION (Left Side): Master Public Health -->
-                <div class="timeline-item" style="margin-right: auto; margin-left: 0; padding-right: 40px; padding-left: 0; text-align: right;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-nipsom.jpg" alt="NIPSOM" class="timeline-logo" style="margin-left: auto;">
-
-                        <div class="timeline-date">2016 – 2018</div>
-                        <h3>Master of Public Health (Health Service Management and Policy)</h3>
-                        <h4>National Institute of Preventive and Social Medicine | Dhaka, Bangladesh</h4>
-                        <p>80 credits. Health system and policy, healthcare and program management, epidemiology, and biostatistics.</p>
-                    </div>
-                </div>
-
-                <!-- WORK (Right Side): Master Trainer -->
-                <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
-
-                        <div class="timeline-date">2016 – 2017</div>
-                        <h3>Master Trainer</h3>
-                        <h4>Action Against Hunger | Dhaka, Bangladesh</h4>
-                        <p>Organized and conducted training sessions for government health staff on inpatient management of severe acute malnutrition as a part of a disaster preparedness project.</p>
-                    </div>
-                </div>
-
-                <!-- WORK (Right Side): Medical Doctor -->
-                <div class="timeline-item" style="margin-left: auto; margin-right: 0; padding-left: 40px; padding-right: 0; text-align: left;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo">
-
-                        <div class="timeline-date">2014 – 2015</div>
-                        <h3>Medical Doctor</h3>
-                        <h4>Faridpur Medical College Hospital | Faridpur, Bangladesh</h4>
-                        <p>A 52-week rotatory clinical and public health internship program, offering placements in key departments such as medicine, surgery, obstetrics and gynecology, pediatrics, and psychiatry.</p>
-                    </div>
-                </div>
-
-                <!-- EDUCATION (Left Side): Bachelor -->
-                <div class="timeline-item" style="margin-right: auto; margin-left: 0; padding-right: 40px; padding-left: 0; text-align: right;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo" style="margin-left: auto;">
-
-                        <div class="timeline-date">2009 – 2015</div>
-                        <h3>Bachelor of Medicine and Surgery (Medical Doctor)</h3>
-                        <h4>Faridpur Medical College (University of Dhaka) | Faridpur, Bangladesh</h4>
-                        <p>Medicine, surgery, obstetrics and gynecology, pharmacology, physiology, pathology, microbiology, community medicine.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
