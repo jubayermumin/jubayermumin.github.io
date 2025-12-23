@@ -21,6 +21,7 @@
             color: #555;
             line-height: 1.6;
             background-color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -192,144 +193,143 @@
             color: #0d6efd;
         }
 
-        /* --- Timeline / Resume Section (Strict Split) --- */
+        /* ================================================================
+           RESUME TIMELINE CSS (STRICT SPLIT DESIGN)
+           ================================================================
+        */
         .resume-section {
             background-color: #f8f9fa;
         }
-        
+
         .timeline {
-            list-style: none;
-            padding: 0;
             position: relative;
+            padding: 0;
+            list-style: none;
         }
 
         /* Central Vertical Line */
         .timeline:before {
+            content: "";
+            position: absolute;
             top: 0;
             bottom: 0;
-            position: absolute;
-            content: " ";
-            width: 3px;
-            background-color: #dcdcdc; /* Visible line */
             left: 50%;
-            margin-left: -1.5px;
+            width: 2px;
+            margin-left: -1px;
+            background-color: #e9ecef;
         }
 
+        /* List Items */
         .timeline > li {
-            margin-bottom: 40px;
             position: relative;
-            width: 100%;
-            float: left;
-            clear: left;
-        }
-
-        /* The Date Circle on the Line */
-        .timeline > li > .posted-date {
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            margin-left: -40px;
-            background-color: #fff;
-            border: 3px solid #0d6efd;
-            border-radius: 50%;
-            text-align: center;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            z-index: 10;
-            box-shadow: 0 0 0 5px #f8f9fa; /* Gap around date */
-        }
-
-        /* Content Panel Wrapper */
-        .timeline > li > .timeline-panel {
-            width: 44%;
-            float: left; /* Left by default (Education) */
-            border: 1px solid #e0e0e0;
-            background: #fff;
-            border-radius: 4px;
-            padding: 20px;
-            position: relative;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        /* Hover Effect */
-        .timeline > li > a:hover .timeline-panel {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-            border-color: #0d6efd;
-        }
-        
-        .timeline > li > a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        /* Arrow for Left Panel (Education) pointing Right */
-        .timeline > li > .timeline-panel:before {
-            position: absolute;
-            top: 26px;
-            right: -15px;
-            display: inline-block;
-            border-top: 15px solid transparent;
-            border-left: 15px solid #e0e0e0; /* Color of border */
-            border-right: 0 solid #e0e0e0;
-            border-bottom: 15px solid transparent;
-            content: " ";
-        }
-        .timeline > li > .timeline-panel:after {
-            position: absolute;
-            top: 27px;
-            right: -14px;
-            display: inline-block;
-            border-top: 14px solid transparent;
-            border-left: 14px solid #fff; /* Color of box bg */
-            border-right: 0 solid #fff;
-            border-bottom: 14px solid transparent;
-            content: " ";
-        }
-
-        /* RIGHT SIDE (Work Experience) Logic */
-        .timeline > li.timeline-inverted > .timeline-panel {
-            float: right; /* Force to right side */
-        }
-
-        /* Arrow for Right Panel (Work) pointing Left */
-        .timeline > li.timeline-inverted > .timeline-panel:before {
-            border-left-width: 0;
-            border-right-width: 15px;
-            left: -15px;
-            right: auto;
-            border-right-color: #e0e0e0;
-        }
-        .timeline > li.timeline-inverted > .timeline-panel:after {
-            border-left-width: 0;
-            border-right-width: 14px;
-            left: -14px;
-            right: auto;
-            border-right-color: #fff;
+            min-height: 50px;
+            margin-bottom: 50px;
         }
         
         /* Clear floats */
+        .timeline > li:before, 
         .timeline > li:after {
-            content: "";
+            content: " ";
             display: table;
+        }
+        .timeline > li:after {
             clear: both;
         }
 
-        /* Text Styling */
+        /* The Box/Panel containing the Text */
+        .timeline > li .timeline-panel {
+            float: left; /* Default: Education on Left */
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            text-align: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .timeline > li .timeline-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #0d6efd;
+        }
+
+        /* The Date Circle in the Center */
+        .timeline > li .timeline-image {
+            z-index: 100;
+            position: absolute;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px; /* Half width to center */
+            border: 3px solid #0d6efd;
+            border-radius: 100%;
+            text-align: center;
+            color: #333;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        /* INVERTED: Work Experience on the Right */
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+        /* ARROWS */
+        /* Arrow for Left Panel (Education) pointing Right */
+        .timeline > li .timeline-panel:before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            border-top: 15px solid transparent;
+            border-right: 0 solid #d4d4d4;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #d4d4d4;
+        }
+        .timeline > li .timeline-panel:after {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 27px;
+            right: -14px;
+            border-top: 14px solid transparent;
+            border-right: 0 solid #fff;
+            border-bottom: 14px solid transparent;
+            border-left: 14px solid #fff;
+        }
+
+        /* Arrow for Right Panel (Work) pointing Left */
+        .timeline > li.timeline-inverted .timeline-panel:before {
+            right: auto;
+            left: -15px;
+            border-left-width: 0;
+            border-right-width: 15px;
+            border-left-color: #d4d4d4; /* reset */
+            border-right-color: #d4d4d4;
+        }
+        .timeline > li.timeline-inverted .timeline-panel:after {
+            right: auto;
+            left: -14px;
+            border-left-width: 0;
+            border-right-width: 14px;
+            border-left-color: #fff; /* reset */
+            border-right-color: #fff;
+        }
+
+        /* Text & Logos inside Resume */
         .timeline-heading h3 {
             margin-top: 0;
             font-size: 1.2rem;
             color: #333;
-            font-weight: 700;
         }
         .timeline-heading h4 {
             margin-top: 5px;
@@ -401,36 +401,35 @@
             .timeline:before {
                 left: 20px;
             }
-            .timeline > li > .posted-date {
+            .timeline > li .timeline-image {
                 left: 20px;
                 width: 60px;
                 height: 60px;
                 margin-left: -30px;
                 font-size: 0.7rem;
             }
-            .timeline > li > .timeline-panel {
+            .timeline > li .timeline-panel {
                 float: right;
-                width: calc(100% - 80px);
-                padding: 15px;
-                margin-left: 20px;
+                width: calc(100% - 75px); /* Full width minus date circle */
             }
-            .timeline > li > .timeline-panel:before {
+            .timeline > li.timeline-inverted .timeline-panel {
+                float: right;
+            }
+            
+            /* Fix arrows for mobile (always point left) */
+            .timeline > li .timeline-panel:before {
+                right: auto;
+                left: -15px;
                 border-left-width: 0;
                 border-right-width: 15px;
-                left: -15px;
-                right: auto;
-                border-right-color: #e0e0e0;
+                border-right-color: #d4d4d4;
             }
-            .timeline > li > .timeline-panel:after {
+            .timeline > li .timeline-panel:after {
+                right: auto;
+                left: -14px;
                 border-left-width: 0;
                 border-right-width: 14px;
-                left: -14px;
-                right: auto;
                 border-right-color: #fff;
-            }
-            .timeline > li.timeline-inverted > .timeline-panel {
-                float: right;
-                width: calc(100% - 80px);
             }
         }
     </style>
@@ -621,9 +620,9 @@
                 <div class="col-md-12">
                     <ul class="timeline">
                         
-                        <!-- 1. WORK (Right): Research Assistant -->
+                        <!-- 1. WORK (Right / Inverted): Research Assistant -->
                         <li class="timeline-inverted">
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2025</span>
                             </div>
                             <a href="https://www.ces.regionstockholm.se/" target="_blank">
@@ -640,9 +639,9 @@
                             </a>
                         </li>
 
-                        <!-- 2. EDUCATION (Left): Master KI -->
+                        <!-- 2. EDUCATION (Left / Standard): Master KI -->
                         <li>
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2023<br>2025</span>
                             </div>
                             <a href="https://education.ki.se/bachelors-masters-studies/programmes-and-courses/masters-programme-in-public-health-sciences" target="_blank">
@@ -659,9 +658,9 @@
                             </a>
                         </li>
 
-                        <!-- 3. WORK (Right): WHO -->
+                        <!-- 3. WORK (Right / Inverted): WHO -->
                         <li class="timeline-inverted">
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2020<br>2023</span>
                             </div>
                             <a href="https://www.who.int/bangladesh/" target="_blank">
@@ -678,9 +677,9 @@
                             </a>
                         </li>
 
-                        <!-- 4. WORK (Right): Nutrition Manager -->
+                        <!-- 4. WORK (Right / Inverted): Nutrition Manager -->
                         <li class="timeline-inverted">
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2017<br>2020</span>
                             </div>
                             <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
@@ -697,9 +696,9 @@
                             </a>
                         </li>
 
-                        <!-- 5. EDUCATION (Left): Master NIPSOM -->
+                        <!-- 5. EDUCATION (Left / Standard): Master NIPSOM -->
                         <li>
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2016<br>2018</span>
                             </div>
                             <a href="https://nipsom.gov.bd/" target="_blank">
@@ -716,9 +715,9 @@
                             </a>
                         </li>
 
-                        <!-- 6. WORK (Right): Master Trainer -->
+                        <!-- 6. WORK (Right / Inverted): Master Trainer -->
                         <li class="timeline-inverted">
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2016<br>2017</span>
                             </div>
                             <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
@@ -735,9 +734,9 @@
                             </a>
                         </li>
 
-                        <!-- 7. WORK (Right): Medical Doctor Internship -->
+                        <!-- 7. WORK (Right / Inverted): Medical Doctor Internship -->
                         <li class="timeline-inverted">
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2014<br>2015</span>
                             </div>
                             <a href="https://fmc.college.gov.bd/" target="_blank">
@@ -754,9 +753,9 @@
                             </a>
                         </li>
 
-                        <!-- 8. EDUCATION (Left): Bachelor -->
+                        <!-- 8. EDUCATION (Left / Standard): Bachelor -->
                         <li>
-                            <div class="posted-date">
+                            <div class="timeline-image">
                                 <span>2009<br>2015</span>
                             </div>
                             <a href="https://fmc.college.gov.bd/" target="_blank">
