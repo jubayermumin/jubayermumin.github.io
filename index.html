@@ -194,7 +194,7 @@
         }
 
         /* ================================================================
-           RESUME TIMELINE CSS (FIXED SPLIT DESIGN)
+           RESUME TIMELINE CSS (FIXED SPLIT DESIGN + OVAL DATES)
            ================================================================
         */
         .resume-section {
@@ -236,16 +236,18 @@
             clear: both;
         }
 
-        /* The Date Circle in the Center */
+        /* The Date Oval/Rectangle in the Center */
         .timeline > li .timeline-image {
             z-index: 100;
             position: absolute;
             left: 50%;
-            width: 80px;
-            height: 80px;
-            margin-left: -40px;
+            /* Dimensions for Oval */
+            width: 120px; 
+            height: 50px; 
+            margin-left: -60px; /* Half of 120px to center it */
+            
             border: 3px solid #0d6efd;
-            border-radius: 100%;
+            border-radius: 50px; /* Makes it oval/pill shaped */
             text-align: center;
             color: #333;
             background-color: #fff;
@@ -253,8 +255,8 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.8rem;
-            line-height: 1.2;
+            font-size: 0.85rem;
+            line-height: 1;
             box-shadow: 0 0 0 7px #f8f9fa; /* Gap around date */
         }
 
@@ -266,10 +268,9 @@
         }
 
         /* The Panel containing the Text */
-        /* Updated selector to target panel correctly even inside <a> tag */
         .timeline > li .timeline-panel {
             float: left; /* DEFAULT: Left side */
-            width: 44%;
+            width: 42%; /* Slightly smaller to accommodate wider oval */
             padding: 20px;
             text-align: left;
             border: 1px solid #d4d4d4;
@@ -287,7 +288,6 @@
         }
 
         /* INVERTED: Work Experience on the Right */
-        /* Fixed Selector: Removed direct child combinator (>) to allow nesting in <a> */
         .timeline > li.timeline-inverted .timeline-panel {
             float: right;
         }
@@ -298,7 +298,7 @@
             content: " ";
             display: inline-block;
             position: absolute;
-            top: 26px;
+            top: 15px; /* Aligned with oval center approx */
             right: -15px;
             border-top: 15px solid transparent;
             border-right: 0 solid #d4d4d4;
@@ -309,7 +309,7 @@
             content: " ";
             display: inline-block;
             position: absolute;
-            top: 27px;
+            top: 16px;
             right: -14px;
             border-top: 14px solid transparent;
             border-right: 0 solid #fff;
@@ -410,22 +410,21 @@
         /* --- Mobile Adjustment (Stacking) --- */
         @media (max-width: 767px) {
             .timeline:before {
-                left: 20px;
+                left: 60px; /* Move line right to fit wider oval */
             }
             .timeline > li .timeline-image {
-                left: 20px;
-                width: 60px;
-                height: 60px;
-                margin-left: -30px;
-                font-size: 0.7rem;
+                left: 60px; /* Move oval right */
+                width: 100px; /* Slightly narrower on mobile */
+                height: 40px;
+                margin-left: -50px;
+                font-size: 0.75rem;
             }
             .timeline > li .timeline-panel {
                 float: right;
-                width: calc(100% - 80px);
+                width: calc(100% - 130px); /* Adjust width to fit */
                 padding: 15px;
-                margin-left: 20px; /* Small gap for arrow */
+                margin-left: 20px;
             }
-            /* Reset float for inverted on mobile to behave same as standard */
             .timeline > li.timeline-inverted .timeline-panel {
                 float: right;
             }
@@ -634,7 +633,7 @@
                 <div class="col-md-12">
                     <ul class="timeline">
                         
-                        <!-- 1. WORK (Right): Research Assistant -->
+                        <!-- 1. WORK (Right / Inverted): Research Assistant -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2025</span>
@@ -653,10 +652,10 @@
                             </a>
                         </li>
 
-                        <!-- 2. EDUCATION (Left): Master KI -->
+                        <!-- 2. EDUCATION (Left / Standard): Master KI -->
                         <li>
                             <div class="timeline-image">
-                                <span>2023<br>2025</span>
+                                <span>2023–2025</span>
                             </div>
                             <a href="https://education.ki.se/bachelors-masters-studies/programmes-and-courses/masters-programme-in-public-health-sciences" target="_blank">
                                 <div class="timeline-panel">
@@ -672,10 +671,10 @@
                             </a>
                         </li>
 
-                        <!-- 3. WORK (Right): WHO -->
+                        <!-- 3. WORK (Right / Inverted): WHO -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <span>2020<br>2023</span>
+                                <span>2020–2023</span>
                             </div>
                             <a href="https://www.who.int/bangladesh/" target="_blank">
                                 <div class="timeline-panel">
@@ -691,10 +690,10 @@
                             </a>
                         </li>
 
-                        <!-- 4. WORK (Right): Nutrition Manager -->
+                        <!-- 4. WORK (Right / Inverted): Nutrition Manager -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <span>2017<br>2020</span>
+                                <span>2017–2020</span>
                             </div>
                             <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
                                 <div class="timeline-panel">
@@ -710,10 +709,10 @@
                             </a>
                         </li>
 
-                        <!-- 5. EDUCATION (Left): Master NIPSOM -->
+                        <!-- 5. EDUCATION (Left / Standard): Master NIPSOM -->
                         <li>
                             <div class="timeline-image">
-                                <span>2016<br>2018</span>
+                                <span>2016–2018</span>
                             </div>
                             <a href="https://nipsom.gov.bd/" target="_blank">
                                 <div class="timeline-panel">
@@ -729,10 +728,10 @@
                             </a>
                         </li>
 
-                        <!-- 6. WORK (Right): Master Trainer -->
+                        <!-- 6. WORK (Right / Inverted): Master Trainer -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <span>2016<br>2017</span>
+                                <span>2016–2017</span>
                             </div>
                             <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
                                 <div class="timeline-panel">
@@ -748,10 +747,10 @@
                             </a>
                         </li>
 
-                        <!-- 7. WORK (Right): Medical Doctor Internship -->
+                        <!-- 7. WORK (Right / Inverted): Medical Doctor Internship -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <span>2014<br>2015</span>
+                                <span>2014–2015</span>
                             </div>
                             <a href="https://fmc.college.gov.bd/" target="_blank">
                                 <div class="timeline-panel">
@@ -767,10 +766,10 @@
                             </a>
                         </li>
 
-                        <!-- 8. EDUCATION (Left): Bachelor -->
+                        <!-- 8. EDUCATION (Left / Standard): Bachelor -->
                         <li>
                             <div class="timeline-image">
-                                <span>2009<br>2015</span>
+                                <span>2009–2015</span>
                             </div>
                             <a href="https://fmc.college.gov.bd/" target="_blank">
                                 <div class="timeline-panel">
