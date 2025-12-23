@@ -21,7 +21,7 @@
             color: #555;
             line-height: 1.6;
             background-color: #fff;
-            overflow-x: hidden; /* Prevent horizontal scrollbar */
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -194,7 +194,7 @@
         }
 
         /* ================================================================
-           RESUME TIMELINE CSS (STRICT SPLIT DESIGN)
+           RESUME TIMELINE CSS (FIXED SPLIT DESIGN)
            ================================================================
         */
         .resume-section {
@@ -214,16 +214,16 @@
             top: 0;
             bottom: 0;
             left: 50%;
-            width: 2px;
-            margin-left: -1px;
-            background-color: #e9ecef;
+            width: 3px;
+            margin-left: -1.5px;
+            background-color: #dcdcdc;
         }
 
         /* List Items */
         .timeline > li {
             position: relative;
-            min-height: 50px;
             margin-bottom: 50px;
+            min-height: 50px;
         }
         
         /* Clear floats */
@@ -236,26 +236,6 @@
             clear: both;
         }
 
-        /* The Box/Panel containing the Text */
-        .timeline > li .timeline-panel {
-            float: left; /* Default: Education on Left */
-            position: relative;
-            width: 45%;
-            padding: 20px;
-            text-align: left;
-            border: 1px solid #d4d4d4;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-
-        .timeline > li .timeline-panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: #0d6efd;
-        }
-
         /* The Date Circle in the Center */
         .timeline > li .timeline-image {
             z-index: 100;
@@ -263,7 +243,7 @@
             left: 50%;
             width: 80px;
             height: 80px;
-            margin-left: -40px; /* Half width to center */
+            margin-left: -40px;
             border: 3px solid #0d6efd;
             border-radius: 100%;
             text-align: center;
@@ -275,10 +255,40 @@
             font-weight: 700;
             font-size: 0.8rem;
             line-height: 1.2;
+            box-shadow: 0 0 0 7px #f8f9fa; /* Gap around date */
+        }
+
+        /* Wrapper Link Style */
+        .timeline > li > a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* The Panel containing the Text */
+        /* Updated selector to target panel correctly even inside <a> tag */
+        .timeline > li .timeline-panel {
+            float: left; /* DEFAULT: Left side */
+            width: 44%;
+            padding: 20px;
+            text-align: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .timeline > li .timeline-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #0d6efd;
         }
 
         /* INVERTED: Work Experience on the Right */
-        .timeline > li.timeline-inverted > .timeline-panel {
+        /* Fixed Selector: Removed direct child combinator (>) to allow nesting in <a> */
+        .timeline > li.timeline-inverted .timeline-panel {
             float: right;
         }
 
@@ -313,7 +323,7 @@
             left: -15px;
             border-left-width: 0;
             border-right-width: 15px;
-            border-left-color: #d4d4d4; /* reset */
+            border-left-color: #d4d4d4;
             border-right-color: #d4d4d4;
         }
         .timeline > li.timeline-inverted .timeline-panel:after {
@@ -321,7 +331,7 @@
             left: -14px;
             border-left-width: 0;
             border-right-width: 14px;
-            border-left-color: #fff; /* reset */
+            border-left-color: #fff;
             border-right-color: #fff;
         }
 
@@ -330,6 +340,7 @@
             margin-top: 0;
             font-size: 1.2rem;
             color: #333;
+            font-weight: 700;
         }
         .timeline-heading h4 {
             margin-top: 5px;
@@ -410,8 +421,11 @@
             }
             .timeline > li .timeline-panel {
                 float: right;
-                width: calc(100% - 75px); /* Full width minus date circle */
+                width: calc(100% - 80px);
+                padding: 15px;
+                margin-left: 20px; /* Small gap for arrow */
             }
+            /* Reset float for inverted on mobile to behave same as standard */
             .timeline > li.timeline-inverted .timeline-panel {
                 float: right;
             }
@@ -620,7 +634,7 @@
                 <div class="col-md-12">
                     <ul class="timeline">
                         
-                        <!-- 1. WORK (Right / Inverted): Research Assistant -->
+                        <!-- 1. WORK (Right): Research Assistant -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2025</span>
@@ -639,7 +653,7 @@
                             </a>
                         </li>
 
-                        <!-- 2. EDUCATION (Left / Standard): Master KI -->
+                        <!-- 2. EDUCATION (Left): Master KI -->
                         <li>
                             <div class="timeline-image">
                                 <span>2023<br>2025</span>
@@ -658,7 +672,7 @@
                             </a>
                         </li>
 
-                        <!-- 3. WORK (Right / Inverted): WHO -->
+                        <!-- 3. WORK (Right): WHO -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2020<br>2023</span>
@@ -677,7 +691,7 @@
                             </a>
                         </li>
 
-                        <!-- 4. WORK (Right / Inverted): Nutrition Manager -->
+                        <!-- 4. WORK (Right): Nutrition Manager -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2017<br>2020</span>
@@ -696,7 +710,7 @@
                             </a>
                         </li>
 
-                        <!-- 5. EDUCATION (Left / Standard): Master NIPSOM -->
+                        <!-- 5. EDUCATION (Left): Master NIPSOM -->
                         <li>
                             <div class="timeline-image">
                                 <span>2016<br>2018</span>
@@ -715,7 +729,7 @@
                             </a>
                         </li>
 
-                        <!-- 6. WORK (Right / Inverted): Master Trainer -->
+                        <!-- 6. WORK (Right): Master Trainer -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2016<br>2017</span>
@@ -734,7 +748,7 @@
                             </a>
                         </li>
 
-                        <!-- 7. WORK (Right / Inverted): Medical Doctor Internship -->
+                        <!-- 7. WORK (Right): Medical Doctor Internship -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <span>2014<br>2015</span>
@@ -753,7 +767,7 @@
                             </a>
                         </li>
 
-                        <!-- 8. EDUCATION (Left / Standard): Bachelor -->
+                        <!-- 8. EDUCATION (Left): Bachelor -->
                         <li>
                             <div class="timeline-image">
                                 <span>2009<br>2015</span>
