@@ -8,7 +8,6 @@
     <title>Jubayer Mumin | Personal Website</title>
 
     <!-- FAVICON (Browser Tab Icon) -->
-    <!-- Using your profile picture. Ensure 'jubayermumin.jpg' is uploaded to your repo. -->
     <link rel="icon" href="jubayermumin.jpg" type="image/jpeg">
 
     <!-- Bootstrap 5 CSS -->
@@ -137,7 +136,7 @@
             padding: 60px 0;
         }
 
-        /* Tighter specific sections */
+        /* Specific padding adjustments */
         #skills {
             padding: 20px 0; 
         }
@@ -215,11 +214,11 @@
         }
 
         /* ================================================================
-           RESUME TIMELINE CSS (FIXED SPLIT DESIGN + OVAL DATES)
+           RESUME TIMELINE CSS 
            ================================================================
         */
         .resume-section {
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; /* Gray Background */
         }
 
         .timeline {
@@ -264,9 +263,9 @@
             left: 50%;
             width: 120px; 
             height: 50px; 
-            margin-left: -60px; /* Half of 120px to center it */
+            margin-left: -60px;
             border: 3px solid #0d6efd;
-            border-radius: 50px; /* Makes it oval/pill shaped */
+            border-radius: 50px;
             text-align: center;
             color: #333;
             background-color: #fff;
@@ -276,7 +275,7 @@
             font-weight: 700;
             font-size: 0.85rem;
             line-height: 1;
-            box-shadow: 0 0 0 7px #f8f9fa; /* Gap around date */
+            box-shadow: 0 0 0 7px #f8f9fa;
         }
 
         /* Wrapper Link Style */
@@ -288,8 +287,8 @@
 
         /* The Panel containing the Text */
         .timeline > li .timeline-panel {
-            float: left; /* DEFAULT: Left side */
-            width: 42%; /* Slightly smaller to accommodate wider oval */
+            float: left;
+            width: 42%;
             padding: 20px;
             text-align: left;
             border: 1px solid #d4d4d4;
@@ -312,7 +311,6 @@
         }
 
         /* ARROWS */
-        /* Arrow for Left Panel (Education) pointing Right */
         .timeline > li .timeline-panel:before {
             content: " ";
             display: inline-block;
@@ -336,7 +334,6 @@
             border-left: 14px solid #fff;
         }
 
-        /* Arrow for Right Panel (Work) pointing Left */
         .timeline > li.timeline-inverted .timeline-panel:before {
             right: auto;
             left: -15px;
@@ -481,48 +478,17 @@
             color: #0d6efd;
         }
 
-        /* --- Mobile Adjustment (Stacking) --- */
+        /* --- Mobile Adjustment --- */
         @media (max-width: 767px) {
-            .timeline:before {
-                left: 60px;
-            }
-            .timeline > li .timeline-image {
-                left: 60px;
-                width: 100px;
-                height: 40px;
-                margin-left: -50px;
-                font-size: 0.75rem;
-            }
-            .timeline > li .timeline-panel {
-                float: right;
-                width: calc(100% - 130px);
-                padding: 15px;
-                margin-left: 20px;
-            }
-            .timeline > li.timeline-inverted .timeline-panel {
-                float: right;
-            }
+            .timeline:before { left: 60px; }
+            .timeline > li .timeline-image { left: 60px; width: 100px; height: 40px; margin-left: -50px; font-size: 0.75rem; }
+            .timeline > li .timeline-panel { float: right; width: calc(100% - 130px); padding: 15px; margin-left: 20px; }
+            .timeline > li.timeline-inverted .timeline-panel { float: right; }
             
-            /* Fix arrows for mobile */
-            .timeline > li .timeline-panel:before {
-                right: auto;
-                left: -15px;
-                border-left-width: 0;
-                border-right-width: 15px;
-                border-right-color: #d4d4d4;
-            }
-            .timeline > li .timeline-panel:after {
-                right: auto;
-                left: -14px;
-                border-left-width: 0;
-                border-right-width: 14px;
-                border-right-color: #fff;
-            }
+            .timeline > li .timeline-panel:before { right: auto; left: -15px; border-left-width: 0; border-right-width: 15px; border-right-color: #d4d4d4; }
+            .timeline > li .timeline-panel:after { right: auto; left: -14px; border-left-width: 0; border-right-width: 14px; border-right-color: #fff; }
             
-            .footer-nav li {
-                display: block;
-                margin: 10px 0;
-            }
+            .footer-nav li { display: block; margin: 10px 0; }
         }
     </style>
 </head>
@@ -541,10 +507,9 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Research projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Research projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <!-- Link to Separate Courses Page -->
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact-info">Contact</a></li>
                 </ul>
@@ -583,7 +548,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (WHITE) -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -650,7 +615,7 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
+    <!-- Publications Section (GRAY) -->
     <section id="publications" class="bg-light-gray">
         <div class="container">
             <h2 class="section-title">Publications</h2>
@@ -708,16 +673,8 @@
         </div>
     </section>
 
-    <!-- Research Projects Section (Placeholder) -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Research Projects</h2>
-            <p class="text-center text-muted">Details on research projects coming soon.</p>
-        </div>
-    </section>
-
-    <!-- Teaching Section -->
-    <section id="teaching" class="bg-light-gray">
+    <!-- Teaching Section (WHITE) -->
+    <section id="teaching">
         <div class="container">
             <h2 class="section-title">Teaching</h2>
             <div class="row justify-content-center">
@@ -733,7 +690,7 @@
         </div>
     </section>
 
-    <!-- Resume / Timeline Section -->
+    <!-- Resume / Timeline Section (GRAY) -->
     <section id="resume" class="resume-section">
         <div class="container">
             <h2 class="section-title">Resume</h2>
@@ -896,7 +853,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (WHITE) -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills</h2>
@@ -920,7 +877,7 @@
         </div>
     </section>
 
-    <!-- Language Section -->
+    <!-- Language Section (GRAY) -->
     <section id="languages" class="bg-light-gray">
         <div class="container">
             <h2 class="section-title">Languages</h2>
@@ -961,7 +918,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (WHITE) -->
     <section id="contact-info">
         <div class="container text-center">
             <h2 class="section-title">Get in Touch</h2>
@@ -984,7 +941,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Research Projects</a></li>
+                <li><a href="projects.html">Research Projects</a></li>
                 <li><a href="#teaching">Teaching</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="courses.html">Courses</a></li>
