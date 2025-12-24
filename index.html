@@ -370,9 +370,10 @@
         .lang-card {
             border: 1px solid #eee;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px; /* Smaller padding */
             transition: all 0.3s ease;
             height: 100%;
+            background: #fff;
         }
         .lang-card:hover {
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -382,11 +383,11 @@
             display: inline-block;
             background-color: #0d6efd;
             color: white;
-            padding: 5px 15px;
+            padding: 3px 12px; /* Smaller padding */
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.9rem;
-            margin-top: 10px;
+            font-size: 0.85rem; /* Smaller font */
+            margin-top: 8px;
         }
 
         /* --- Publications List --- */
@@ -408,14 +409,51 @@
             border-bottom: none;
         }
 
+        /* --- Contact Section --- */
+        #contact-info {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .contact-btn {
+            margin: 10px;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-email { background-color: #ea4335; color: white; border: none; }
+        .btn-facebook { background-color: #1877f2; color: white; border: none; }
+        .btn-instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: white; border: none; }
+        .contact-btn:hover { color: #fff; transform: translateY(-3px); opacity: 0.9; }
+
         /* --- Footer --- */
         footer {
             background-color: #1a1e23;
             color: #fff;
-            padding: 30px 0;
+            padding: 40px 0 20px;
             text-align: center;
         }
         
+        .footer-nav {
+            margin-bottom: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        .footer-nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+        .footer-nav a {
+            color: #ccc;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .footer-nav a:hover {
+            color: #0d6efd;
+        }
+
         /* --- Mobile Adjustment (Stacking) --- */
         @media (max-width: 767px) {
             .timeline:before {
@@ -453,6 +491,11 @@
                 border-right-width: 14px;
                 border-right-color: #fff;
             }
+            
+            .footer-nav li {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -474,6 +517,7 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Research projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact-info">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -681,7 +725,7 @@
                                         <h4>Centrum för epidemiologi och samhällsmedicin, Region Stockholm</h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Supported the project on ADHD and relative age in Swedish children.</p>
+                                        <p>Supporting the project on ADHD and relative age in Swedish adolescents and children. Responsibilities include formulating research questions, conducting a literature review and statistical analysis, writing manuscripts for journals, and presenting the findings to stakeholders.</p>
                                     </div>
                                 </div>
                             </a>
@@ -718,7 +762,7 @@
                                         <h4>World Health Organization | Bangladesh</h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Implemented routine immunization program and vaccine-preventable disease surveillance, including COVID-19 mass vaccination campaigns in the Rohingya refugee camps.</p>
+                                        <p>Implementing immunization programs and vaccine-preventable disease surveillance, including COVID-19 mass vaccination campaigns. Supervised 25 staff members.</p>
                                     </div>
                                 </div>
                             </a>
@@ -737,7 +781,7 @@
                                         <h4>Action Against Hunger | Bangladesh</h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Implemented community-based management of acute malnutrition (CMAM) projects in the Rohingya refugee camps.</p>
+                                        <p>Implemented community-based nutrition projects in the refugee camps. Supervised 85 staff members, conducted training for government and partner staff members.</p>
                                     </div>
                                 </div>
                             </a>
@@ -774,7 +818,7 @@
                                         <h4>Action Against Hunger | Bangladesh</h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Organized and conducted training sessions for government health staff on inpatient management of severe acute malnutrition.</p>
+                                        <p>Organized and conducted training sessions for government health staff on inpatient management of severe acute malnutrition as a part of a disaster preparedness project.</p>
                                     </div>
                                 </div>
                             </a>
@@ -823,67 +867,83 @@
         </div>
     </section>
 
-    <!-- Skills / Tech Section -->
-    <section id="skills" class="bg-light-gray">
+    <!-- Skills and Languages (Combined Side-by-Side) -->
+    <section id="skills-languages" class="bg-light-gray">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="row text-center">
-                <!-- Skill 1 -->
-                <div class="col-md-4 col-12 mb-4">
-                    <i class="fas fa-heartbeat fa-3x mb-3 text-primary"></i>
-                    <h5>Public Health Research</h5>
+            <div class="row">
+                
+                <!-- Left: Skills -->
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h2 class="section-title text-center">Skills</h2>
+                    <div class="row text-center">
+                        <div class="col-6 mb-4">
+                            <i class="fas fa-heartbeat fa-2x mb-2 text-primary"></i>
+                            <h6 class="fw-bold">Public Health Research</h6>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <i class="fas fa-chart-bar fa-2x mb-2 text-primary"></i>
+                            <h6 class="fw-bold">Data Analysis (R, Stata, SPSS)</h6>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <i class="fas fa-tasks fa-2x mb-2 text-primary"></i>
+                            <h6 class="fw-bold">Project Management</h6>
+                        </div>
+                    </div>
                 </div>
-                <!-- Skill 2 -->
-                <div class="col-md-4 col-12 mb-4">
-                    <i class="fas fa-chart-bar fa-3x mb-3 text-primary"></i>
-                    <h5>Data Analysis (R, Stata, SPSS)</h5>
+
+                <!-- Right: Languages -->
+                <div class="col-md-6">
+                    <h2 class="section-title text-center">Languages</h2>
+                    <div class="row text-center justify-content-center">
+                        <div class="col-6 col-sm-3 mb-3">
+                            <div class="lang-card">
+                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
+                                <h6>English</h6>
+                                <div class="lang-level">C1</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3 mb-3">
+                            <div class="lang-card">
+                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
+                                <h6>Swedish</h6>
+                                <div class="lang-level">B2</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3 mb-3">
+                            <div class="lang-card">
+                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
+                                <h6>Arabic</h6>
+                                <div class="lang-level">A1</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3 mb-3">
+                            <div class="lang-card">
+                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
+                                <h6>Bengali</h6>
+                                <div class="lang-level">Native</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Skill 3 -->
-                <div class="col-md-4 col-12 mb-4">
-                    <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
-                    <h5>Project Management</h5>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Language Section -->
-    <section id="languages">
-        <div class="container">
-            <h2 class="section-title">Languages</h2>
-            <div class="row justify-content-center text-center">
-                <!-- English -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
-                        <h5>English</h5>
-                        <div class="lang-level">C1</div>
-                    </div>
-                </div>
-                <!-- Swedish -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
-                        <h5>Swedish</h5>
-                        <div class="lang-level">B2</div>
-                    </div>
-                </div>
-                <!-- Arabic -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
-                        <h5>Arabic</h5>
-                        <div class="lang-level">A1</div>
-                    </div>
-                </div>
-                <!-- Bengali -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
-                        <h5>Bengali</h5>
-                        <div class="lang-level">Native</div>
-                    </div>
-                </div>
+    <!-- Contact Section (New) -->
+    <section id="contact-info">
+        <div class="container text-center">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="mailto:jubayer.mumin@ki.se" class="btn contact-btn btn-email">
+                    <i class="fas fa-envelope me-2"></i> Email Me
+                </a>
+                <a href="https://m.me/jubayermumin" target="_blank" class="btn contact-btn btn-facebook">
+                    <i class="fab fa-facebook-messenger me-2"></i> Message on Facebook
+                </a>
+                <a href="https://www.instagram.com/jubayermumin/" target="_blank" class="btn contact-btn btn-instagram">
+                    <i class="fab fa-instagram me-2"></i> Message on Instagram
+                </a>
             </div>
         </div>
     </section>
@@ -891,29 +951,34 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <p class="mb-3">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
-            <div class="social-icons">
+            <!-- Footer Navigation Links -->
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Research Projects</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+
+            <div class="social-icons mb-3">
                 <!-- GitHub -->
                 <a href="https://github.com/jubayermumin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                
                 <!-- ResearchGate -->
                 <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                
                 <!-- ORCID -->
                 <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                
-                <!-- Instagram -->
+                <!-- Instagram (Added) -->
                 <a href="https://www.instagram.com/jubayermumin/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                
                 <!-- Google Scholar -->
                 <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
             </div>
+
+            <p class="mb-0">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
         </div>
     </footer>
 
