@@ -370,7 +370,7 @@
         .lang-card {
             border: 1px solid #eee;
             border-radius: 10px;
-            padding: 15px; /* Smaller padding */
+            padding: 20px; 
             transition: all 0.3s ease;
             height: 100%;
             background: #fff;
@@ -383,11 +383,11 @@
             display: inline-block;
             background-color: #0d6efd;
             color: white;
-            padding: 3px 12px; /* Smaller padding */
+            padding: 5px 15px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.85rem; /* Smaller font */
-            margin-top: 8px;
+            font-size: 0.9rem;
+            margin-top: 10px;
         }
 
         /* --- Publications List --- */
@@ -423,7 +423,6 @@
         }
         .btn-email { background-color: #ea4335; color: white; border: none; }
         .btn-facebook { background-color: #1877f2; color: white; border: none; }
-        .btn-instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: white; border: none; }
         .contact-btn:hover { color: #fff; transform: translateY(-3px); opacity: 0.9; }
 
         /* --- Footer --- */
@@ -867,70 +866,72 @@
         </div>
     </section>
 
-    <!-- Skills and Languages (Combined Side-by-Side) -->
-    <section id="skills-languages" class="bg-light-gray">
+    <!-- Skills Section -->
+    <section id="skills">
         <div class="container">
-            <div class="row">
-                
-                <!-- Left: Skills -->
-                <div class="col-md-6 mb-5 mb-md-0">
-                    <h2 class="section-title text-center">Skills</h2>
-                    <div class="row text-center">
-                        <div class="col-6 mb-4">
-                            <i class="fas fa-heartbeat fa-2x mb-2 text-primary"></i>
-                            <h6 class="fw-bold">Public Health Research</h6>
-                        </div>
-                        <div class="col-6 mb-4">
-                            <i class="fas fa-chart-bar fa-2x mb-2 text-primary"></i>
-                            <h6 class="fw-bold">Data Analysis (R, Stata, SPSS)</h6>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <i class="fas fa-tasks fa-2x mb-2 text-primary"></i>
-                            <h6 class="fw-bold">Project Management</h6>
-                        </div>
-                    </div>
+            <h2 class="section-title">Skills</h2>
+            <div class="row text-center">
+                <!-- Skill 1 -->
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-heartbeat fa-3x mb-3 text-primary"></i>
+                    <h5>Public Health Research</h5>
                 </div>
-
-                <!-- Right: Languages -->
-                <div class="col-md-6">
-                    <h2 class="section-title text-center">Languages</h2>
-                    <div class="row text-center justify-content-center">
-                        <div class="col-6 col-sm-3 mb-3">
-                            <div class="lang-card">
-                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
-                                <h6>English</h6>
-                                <div class="lang-level">C1</div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3 mb-3">
-                            <div class="lang-card">
-                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
-                                <h6>Swedish</h6>
-                                <div class="lang-level">B2</div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3 mb-3">
-                            <div class="lang-card">
-                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
-                                <h6>Arabic</h6>
-                                <div class="lang-level">A1</div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3 mb-3">
-                            <div class="lang-card">
-                                <i class="fas fa-language fa-lg mb-2 text-muted"></i>
-                                <h6>Bengali</h6>
-                                <div class="lang-level">Native</div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Skill 2 -->
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-chart-bar fa-3x mb-3 text-primary"></i>
+                    <h5>Data Analysis (R, Stata, SPSS)</h5>
                 </div>
-
+                <!-- Skill 3 -->
+                <div class="col-md-4 col-12 mb-4">
+                    <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
+                    <h5>Project Management</h5>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section (New) -->
+    <!-- Language Section -->
+    <section id="languages" class="bg-light-gray">
+        <div class="container">
+            <h2 class="section-title">Languages</h2>
+            <div class="row justify-content-center text-center">
+                <!-- English -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>English</h5>
+                        <div class="lang-level">C1</div>
+                    </div>
+                </div>
+                <!-- Swedish -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Swedish</h5>
+                        <div class="lang-level">B2</div>
+                    </div>
+                </div>
+                <!-- Arabic -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Arabic</h5>
+                        <div class="lang-level">A1</div>
+                    </div>
+                </div>
+                <!-- Bengali -->
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="lang-card">
+                        <i class="fas fa-language fa-2x mb-2 text-muted"></i>
+                        <h5>Bengali</h5>
+                        <div class="lang-level">Native</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact-info">
         <div class="container text-center">
             <h2 class="section-title">Get in Touch</h2>
@@ -938,11 +939,8 @@
                 <a href="mailto:jubayer.mumin@ki.se" class="btn contact-btn btn-email">
                     <i class="fas fa-envelope me-2"></i> Email Me
                 </a>
-                <a href="https://m.me/jubayermumin" target="_blank" class="btn contact-btn btn-facebook">
+                <a href="https://m.me/628163871150733" target="_blank" class="btn contact-btn btn-facebook">
                     <i class="fab fa-facebook-messenger me-2"></i> Message on Facebook
-                </a>
-                <a href="https://www.instagram.com/jubayermumin/" target="_blank" class="btn contact-btn btn-instagram">
-                    <i class="fab fa-instagram me-2"></i> Message on Instagram
                 </a>
             </div>
         </div>
@@ -972,7 +970,7 @@
                 <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <!-- Instagram (Added) -->
+                <!-- Instagram -->
                 <a href="https://www.instagram.com/jubayermumin/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <!-- Google Scholar -->
                 <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
