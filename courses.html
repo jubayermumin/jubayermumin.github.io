@@ -46,49 +46,69 @@
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            padding: 100px 0 60px;
+            padding: 80px 0 60px;
             color: white;
             text-align: center;
             margin-bottom: 40px;
         }
 
+        /* Section Styling */
+        .course-section-title {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
         /* Course Card Styling */
         .course-card {
             background: #fff;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
             border-radius: 8px;
-            border-left: 5px solid #0d6efd; /* Blue accent line */
+            border-left: 4px solid #0d6efd;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.2s;
         }
         .course-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        
+        /* Line 1: Year */
         .course-year {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #777;
             font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
+        
+        /* Line 2: Title */
         .course-title {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin: 5px 0 10px;
+            margin: 0 0 5px 0;
             color: #333;
         }
+        
+        /* Line 3: Institution + Link container */
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allows wrapping on very small screens */
+        }
+        
         .course-org {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #555;
             font-weight: 500;
-            margin-bottom: 10px;
         }
+        
         .cert-link {
             font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 5px;
+            font-weight: 500;
         }
         .cert-link i { margin-right: 5px; }
 
@@ -113,14 +133,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Note: These links point back to index.html sections -->
                     <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#projects">Research projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#teaching">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
-                    <!-- Active Page -->
                     <li class="nav-item"><a class="nav-link" href="courses.html" style="color: #0d6efd !important;">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#contact-info">Contact</a></li>
                 </ul>
@@ -132,105 +150,141 @@
     <header class="page-header">
         <div class="container">
             <h1>Courses & Training</h1>
-            <p class="lead">Professional development, workshops, and certifications</p>
+            <p class="lead">Professional development, certifications, and fellowships</p>
         </div>
     </header>
 
-    <!-- Courses List Section -->
+    <!-- Main Content -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
                 
+                <!-- SECTION 1: Courses and Workshops -->
+                <h2 class="course-section-title">Courses and Workshops</h2>
+
                 <!-- 2025 -->
                 <div class="course-card">
-                    <div class="course-year">September 2025</div>
+                    <div class="course-year">2025</div>
                     <h3 class="course-title">Introduction to Machine Learning in Epidemiology</h3>
-                    <div class="course-org">Karolinska Institutet</div>
+                    <div class="course-meta">
+                        <span class="course-org">Karolinska Institutet</span>
+                        <!-- No link provided -->
+                    </div>
                 </div>
 
                 <div class="course-card">
                     <div class="course-year">2025</div>
                     <h3 class="course-title">Statistical Analysis with R for Public Health (Specialization)</h3>
-                    <div class="course-org">Imperial College London / Coursera</div>
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/TP0BK5VJA9L1" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    <div class="course-meta">
+                        <span class="course-org">Imperial College London / Coursera</span>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/TP0BK5VJA9L1" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    </div>
                 </div>
 
                 <!-- 2024 -->
                 <div class="course-card">
                     <div class="course-year">2024</div>
                     <h3 class="course-title">3-Day Workshop on Dose Response Meta Analysis</h3>
-                    <div class="course-org">Karolinska Institutet</div>
+                    <div class="course-meta">
+                        <span class="course-org">Karolinska Institutet</span>
+                    </div>
                 </div>
 
-                <!-- Undated/Ongoing Coursera (Placed in recent block) -->
+                <!-- Coursera Specializations (Grouped as Recent) -->
                 <div class="course-card">
-                    <div class="course-year">Coursera Specialization</div>
-                    <h3 class="course-title">Biostatistics in Public Health</h3>
-                    <div class="course-org">The Johns Hopkins University / Coursera</div>
-                    <a href="https://coursera.org/verify/specialization/T2OFCPBAI6VE" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-year">Coursera Specialization</div>
-                    <h3 class="course-title">Epidemiology for Public Health</h3>
-                    <div class="course-org">Imperial College London / Coursera</div>
-                    <a href="https://www.coursera.org/verify/specialization/NSVCS6F838DK" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    <div class="course-year">2023</div>
+                    <h3 class="course-title">Biostatistics in Public Health (Specialization)</h3>
+                    <div class="course-meta">
+                        <span class="course-org">The Johns Hopkins University / Coursera</span>
+                        <a href="https://coursera.org/verify/specialization/T2OFCPBAI6VE" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    </div>
                 </div>
 
                 <div class="course-card">
-                    <div class="course-year">Coursera Course</div>
+                    <div class="course-year">2023</div>
+                    <h3 class="course-title">Epidemiology for Public Health (Specialization)</h3>
+                    <div class="course-meta">
+                        <span class="course-org">Imperial College London / Coursera</span>
+                        <a href="https://www.coursera.org/verify/specialization/NSVCS6F838DK" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-year">2023</div>
                     <h3 class="course-title">R Programming</h3>
-                    <div class="course-org">The Johns Hopkins University / Coursera</div>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/7AAWVMXADB3Z" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    <div class="course-meta">
+                        <span class="course-org">The Johns Hopkins University / Coursera</span>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/7AAWVMXADB3Z" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    </div>
                 </div>
 
                 <!-- 2022 -->
                 <div class="course-card">
                     <div class="course-year">2022</div>
-                    <h3 class="course-title">Google Data Analytics Professional Certificate</h3>
-                    <div class="course-org">Google Career Certificates</div>
-                    <a href="https://www.credly.com/badges/fbee35ea-6a2c-4c46-bf20-338c11a4a81f" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Credly Badge</a>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-year">2022</div>
                     <h3 class="course-title">Infectious Disease Transmission Models for Decision-Makers</h3>
-                    <div class="course-org">The Johns Hopkins University</div>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/HADWRKHGW8A6" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    <div class="course-meta">
+                        <span class="course-org">The Johns Hopkins University</span>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/HADWRKHGW8A6" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    </div>
                 </div>
 
                 <!-- 2020 -->
                 <div class="course-card">
                     <div class="course-year">2020</div>
                     <h3 class="course-title">Doctors Worldwide Improving Care in Health Emergencies</h3>
-                    <div class="course-org">Doctors Worldwide</div>
+                    <div class="course-meta">
+                        <span class="course-org">Doctors Worldwide</span>
+                    </div>
                 </div>
 
                 <div class="course-card">
                     <div class="course-year">2020</div>
                     <h3 class="course-title">Package of Essential Non-communicable Diseases (PEN) Interventions</h3>
-                    <div class="course-org">World Health Organization (WHO)</div>
+                    <div class="course-meta">
+                        <span class="course-org">World Health Organization (WHO)</span>
+                    </div>
                 </div>
 
                 <!-- 2018 -->
                 <div class="course-card">
                     <div class="course-year">2018</div>
-                    <h3 class="course-title">Post Graduate Fellowship - Migrant and Refugee Health</h3>
-                    <div class="course-org">Doctors Worldwide</div>
-                    <a href="https://www.doctorsworldwide.org/files/DWW-PGF-Impact-Report.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Impact Report</a>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-year">2018</div>
                     <h3 class="course-title">Gender Equality and GBV Risk Mitigation in Nutrition Program</h3>
-                    <div class="course-org">Action Against Hunger Canada</div>
+                    <div class="course-meta">
+                        <span class="course-org">Action Against Hunger Canada</span>
+                    </div>
                 </div>
 
                 <!-- 2017 -->
                 <div class="course-card">
                     <div class="course-year">2017</div>
                     <h3 class="course-title">mhGAP (Mental Health Global Action Plan)</h3>
-                    <div class="course-org">World Health Organization</div>
+                    <div class="course-meta">
+                        <span class="course-org">World Health Organization</span>
+                    </div>
+                </div>
+
+
+                <!-- SECTION 2: Fellowships and Professional Certifications -->
+                <h2 class="course-section-title">Fellowships and Professional Certifications</h2>
+
+                <!-- 2022 -->
+                <div class="course-card">
+                    <div class="course-year">2022</div>
+                    <h3 class="course-title">Google Data Analytics Professional Certificate</h3>
+                    <div class="course-meta">
+                        <span class="course-org">Google Career Certificates</span>
+                        <a href="https://www.credly.com/badges/fbee35ea-6a2c-4c46-bf20-338c11a4a81f" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Badge</a>
+                    </div>
+                </div>
+
+                <!-- 2018 -->
+                <div class="course-card">
+                    <div class="course-year">2018</div>
+                    <h3 class="course-title">Post Graduate Fellowship - Migrant and Refugee Health</h3>
+                    <div class="course-meta">
+                        <span class="course-org">Doctors Worldwide</span>
+                        <a href="https://www.doctorsworldwide.org/files/DWW-PGF-Impact-Report.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View Impact Report</a>
+                    </div>
                 </div>
 
             </div>
