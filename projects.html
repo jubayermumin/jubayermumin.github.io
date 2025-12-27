@@ -4,147 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jubayer Mumin - Research Projects">
-    <meta name="author" content="Jubayer Mumin">
     <title>Research Projects | Jubayer Mumin</title>
-
-    <!-- FAVICON -->
     <link rel="icon" href="jubayermumin.jpg" type="image/jpeg">
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Reuse styles for consistency */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #555;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
-        h1, h2, h3 { font-weight: 700; color: #333; }
-        a { text-decoration: none; color: #0d6efd; transition: all 0.3s ease; }
-        a:hover { color: #0a58ca; }
-
-        /* Navbar */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-        }
-        .nav-link {
-            font-weight: 500;
-            color: #333 !important;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-left: 15px;
-        }
-        .nav-link:hover { color: #0d6efd !important; }
-
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0 60px;
-            color: white;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        /* Project Card Styling */
-        .project-card {
-            background: #fff;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #1a1e23;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">JM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#publications">Publications</a></li>
-                    <!-- Active Page -->
-                    <li class="nav-item"><a class="nav-link" href="projects.html" style="color: #0d6efd !important;">Research projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#teaching">Teaching</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact-info">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Research Projects</h1>
-            <p class="lead">Ongoing and past research initiatives</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                
-                <div class="text-center py-5">
-                    <i class="fas fa-flask fa-3x mb-3 text-muted"></i>
-                    <h3>Projects Coming Soon</h3>
-                    <p class="text-muted">This section is currently under development. Please check back later.</p>
+<body id="page-top">
+    <div id="main-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">JM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="projects.html">Research projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-
-                <!-- 
-                Example Project Template (Uncomment to use later):
-                
-                <div class="project-card">
-                    <h3>Project Title</h3>
-                    <p class="text-muted mb-2"><strong>Role:</strong> Lead Researcher | <strong>Year:</strong> 2025</p>
-                    <p>Brief description of the project, methodology, and key findings...</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                </div>
-                -->
-
             </div>
-        </div>
+        </nav>
+
+        <header class="page-header">
+            <div class="container">
+                <h1>Research Projects</h1>
+                <p class="lead">Ongoing and past research initiatives</p>
+            </div>
+        </header>
+
+        <section id="projects" style="padding-top: 0;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="text-center py-5">
+                            <i class="fas fa-flask fa-3x mb-3 text-muted"></i>
+                            <h3>Projects Coming Soon</h3>
+                            <p class="text-muted">This section is currently under development. Please check back later.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p class="mb-0">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="spa-router.js" defer></script>
 </body>
 </html>
