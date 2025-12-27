@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #555;
     line-height: 1.6;
-    background-color: #fff;
+    background-color: #f8f9fa; /* Updated to match your course page preference */
     overflow-x: hidden;
 }
 
@@ -59,7 +59,7 @@ a:hover {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    padding: 120px 0 60px; /* Top padding accounts for fixed navbar */
+    padding: 120px 0 60px;
     color: white;
     text-align: center;
     margin-bottom: 40px;
@@ -180,7 +180,7 @@ section {
     margin-bottom: 10px;
 }
 .list-check li::before {
-    content: '\f00c'; /* FontAwesome check icon */
+    content: '\f00c';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
@@ -418,6 +418,7 @@ footer {
     color: #fff;
     padding: 40px 0 20px;
     text-align: center;
+    margin-top: 60px;
 }
 .footer-nav {
     margin-bottom: 20px;
@@ -437,6 +438,67 @@ footer {
 }
 .footer-nav a:hover {
     color: #0d6efd;
+}
+
+/* --- COURSES PAGE STYLES --- */
+.course-section-title {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.course-card {
+    background: #fff;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.course-year {
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.course-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.course-org {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.cert-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cert-link i {
+    margin-right: 5px;
 }
 
 /* Mobile Adjustments */
