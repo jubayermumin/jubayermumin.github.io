@@ -7,968 +7,143 @@
     <meta name="author" content="Jubayer Mumin">
     <title>Jubayer Mumin | Personal Website</title>
 
-    <!-- FAVICON (Browser Tab Icon) -->
     <link rel="icon" href="jubayermumin.jpg" type="image/jpeg">
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome (Icons) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- CUSTOM STYLES --- */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #555;
-            line-height: 1.6;
-            background-color: #fff;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: #0d6efd;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: #0a58ca;
-        }
-
-        /* --- Full Height Intro Section --- */
-        #home {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .intro-sub {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-
-        .intro h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .social-icons {
-            margin-top: 30px;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 1.8rem;
-            margin: 0 15px;
-        }
-        .social-icons a:hover {
-            color: #0d6efd; 
-            transform: scale(1.1);
-        }
-
-        /* --- Mouse Scroller Animation --- */
-        .mouse-icon {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            border: 2px solid #fff;
-            border-radius: 15px;
-            opacity: 0.8;
-        }
-        
-        .wheel {
-            position: absolute;
-            top: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 8px;
-            background: #fff;
-            border-radius: 2px;
-            animation: scroll 1.5s infinite;
-        }
-
-        @keyframes scroll {
-            0% { top: 5px; opacity: 1; }
-            100% { top: 25px; opacity: 0; }
-        }
-
-        /* --- Navbar --- */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-        }
-        .nav-link {
-            font-weight: 500;
-            color: #333 !important;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-left: 15px;
-        }
-        .nav-link:hover {
-            color: #0d6efd !important;
-        }
-
-        /* --- Section Styling --- */
-        section {
-            padding: 60px 0;
-        }
-
-        /* Specific padding adjustments */
-        #skills {
-            padding: 20px 0; 
-        }
-        #skills .section-title {
-            margin-bottom: 20px; 
-        }
-
-        #languages, #contact-info {
-            padding: 40px 0;
-        }
-
-        #languages .section-title, 
-        #contact-info .section-title {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: #0d6efd;
-        }
-
-        /* --- About Section --- */
-        .profile-photo {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 50%;
-            border: 5px solid #f0f0f0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .personal-info {
-            text-align: center;
-            margin-top: 15px;
-        }
-        .personal-info ul {
-            list-style: none;
-            padding: 0;
-        }
-        .personal-info li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        
-        .list-check {
-            list-style: none;
-            padding-left: 0;
-        }
-        .list-check li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-        }
-        .list-check li::before {
-            content: '\f00c'; /* FontAwesome check icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #0d6efd;
-        }
-
-        /* ================================================================
-           RESUME TIMELINE CSS 
-           ================================================================
-        */
-        .resume-section {
-            background-color: #f8f9fa; /* Gray Background */
-        }
-
-        .timeline {
-            position: relative;
-            padding: 0;
-            list-style: none;
-        }
-
-        /* Central Vertical Line */
-        .timeline:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 3px;
-            margin-left: -1.5px;
-            background-color: #dcdcdc;
-        }
-
-        /* List Items */
-        .timeline > li {
-            position: relative;
-            margin-bottom: 50px;
-            min-height: 50px;
-        }
-        
-        /* Clear floats */
-        .timeline > li:before, 
-        .timeline > li:after {
-            content: " ";
-            display: table;
-        }
-        .timeline > li:after {
-            clear: both;
-        }
-
-        /* The Date Oval/Rectangle in the Center */
-        .timeline > li .timeline-image {
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            width: 120px; 
-            height: 50px; 
-            margin-left: -60px;
-            border: 3px solid #0d6efd;
-            border-radius: 50px;
-            text-align: center;
-            color: #333;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            line-height: 1;
-            box-shadow: 0 0 0 7px #f8f9fa;
-        }
-
-        /* Wrapper Link Style */
-        .timeline > li > a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* The Panel containing the Text */
-        .timeline > li .timeline-panel {
-            float: left;
-            width: 42%;
-            padding: 20px;
-            text-align: left;
-            border: 1px solid #d4d4d4;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-            position: relative;
-        }
-
-        .timeline > li .timeline-panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: #0d6efd;
-        }
-
-        /* INVERTED: Work Experience on the Right */
-        .timeline > li.timeline-inverted .timeline-panel {
-            float: right;
-        }
-
-        /* ARROWS */
-        .timeline > li .timeline-panel:before {
-            content: " ";
-            display: inline-block;
-            position: absolute;
-            top: 15px;
-            right: -15px;
-            border-top: 15px solid transparent;
-            border-right: 0 solid #d4d4d4;
-            border-bottom: 15px solid transparent;
-            border-left: 15px solid #d4d4d4;
-        }
-        .timeline > li .timeline-panel:after {
-            content: " ";
-            display: inline-block;
-            position: absolute;
-            top: 16px;
-            right: -14px;
-            border-top: 14px solid transparent;
-            border-right: 0 solid #fff;
-            border-bottom: 14px solid transparent;
-            border-left: 14px solid #fff;
-        }
-
-        .timeline > li.timeline-inverted .timeline-panel:before {
-            right: auto;
-            left: -15px;
-            border-left-width: 0;
-            border-right-width: 15px;
-            border-left-color: #d4d4d4;
-            border-right-color: #d4d4d4;
-        }
-        .timeline > li.timeline-inverted .timeline-panel:after {
-            right: auto;
-            left: -14px;
-            border-left-width: 0;
-            border-right-width: 14px;
-            border-left-color: #fff;
-            border-right-color: #fff;
-        }
-
-        /* Text & Logos inside Resume */
-        .timeline-heading h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-            color: #333;
-            font-weight: 700;
-        }
-        .timeline-heading h4 {
-            margin-top: 5px;
-            font-size: 0.95rem;
-            color: #666;
-            font-weight: 500;
-        }
-        .timeline-body p {
-            margin-bottom: 0;
-            margin-top: 10px;
-            color: #777;
-            font-size: 0.9rem;
-        }
-        .timeline-logo {
-            max-height: 40px;
-            max-width: 100px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* --- Skills/Facts --- */
-        .bg-light-gray {
-            background-color: #f8f9fa;
-        }
-
-        /* --- Language Card Styling --- */
-        .lang-card {
-            border: 1px solid #eee;
-            border-radius: 10px;
-            padding: 10px 15px;
-            transition: all 0.3s ease;
-            height: 100%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .lang-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-        }
-        .lang-card h6 {
-            margin: 0;
-            flex-grow: 1;
-            text-align: left;
-            padding-left: 10px;
-        }
-        .lang-level {
-            display: inline-block;
-            background-color: #0d6efd;
-            color: white;
-            padding: 2px 10px;
-            border-radius: 15px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-top: 0;
-        }
-
-        /* --- Publications List --- */
-        .publication-section-title {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px;
-        }
-        .publication-item {
-            margin-bottom: 2px; 
-            padding-bottom: 2px; 
-            border-bottom: 1px solid #eee;
-        }
-        .publication-item:last-child {
-            border-bottom: none;
-        }
-
-        /* --- Contact Section --- */
-        #contact-info {
-            padding: 40px 0;
-            background-color: #fff;
-        }
-        .contact-btn {
-            margin: 10px;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        .btn-email { background-color: #ea4335; color: white; border: none; }
-        .btn-facebook { background-color: #1877f2; color: white; border: none; }
-        .contact-btn:hover { color: #fff; transform: translateY(-3px); opacity: 0.9; }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1e23;
-            color: #fff;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-nav {
-            margin-bottom: 20px;
-            padding: 0;
-            list-style: none;
-        }
-        .footer-nav li {
-            display: inline;
-            margin: 0 10px;
-        }
-        .footer-nav a {
-            color: #ccc;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        .footer-nav a:hover {
-            color: #0d6efd;
-        }
-
-        /* --- Mobile Adjustment --- */
-        @media (max-width: 767px) {
-            .timeline:before { left: 60px; }
-            .timeline > li .timeline-image { left: 60px; width: 100px; height: 40px; margin-left: -50px; font-size: 0.75rem; }
-            .timeline > li .timeline-panel { float: right; width: calc(100% - 130px); padding: 15px; margin-left: 20px; }
-            .timeline > li.timeline-inverted .timeline-panel { float: right; }
-            
-            .timeline > li .timeline-panel:before { right: auto; left: -15px; border-left-width: 0; border-right-width: 15px; border-right-color: #d4d4d4; }
-            .timeline > li .timeline-panel:after { right: auto; left: -14px; border-left-width: 0; border-right-width: 14px; border-right-color: #fff; }
-            
-            .footer-nav li { display: block; margin: 10px 0; }
-        }
-    </style>
+    
+    <!-- Link to your new style file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body id="page-top">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#page-top">JM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Research projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact-info">Contact</a></li>
+    <!-- WRAPPER START -->
+    <div id="main-wrapper">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">JM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Research projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header / Hero Section -->
+        <section id="home">
+            <div class="container">
+                <div class="intro">
+                    <div class="intro-sub">Hi! I am</div>
+                    <h1>Jubayer Mumin</h1>
+                    <div class="intro-sub">Medical Doctor, Epidemiologist, and Public Health Researcher</div>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://orcid.org/0000-0002-3729-8299" target="_blank"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.facebook.com/jubayermumin" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jubayermumin/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"><i class="fab fa-google-scholar"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mouse-icon">
+                <div class="wheel"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo">
+                        <div class="personal-info">
+                            <ul>
+                                <li><strong>Name:</strong> Jubayer Mumin</li>
+                                <li><strong>Location:</strong> Stockholm, Sweden</li>
+                                <li><strong>Email:</strong> jubayer.mumin@ki.se</li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="cv.pdf" class="btn btn-primary px-4" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 mt-4 mt-md-0">
+                        <p>I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
+                        <p>I have had the privilege of working with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. A defining moment in my career was leading and managing the COVID-19 vaccination campaigns in the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh.</p>
+                        <p>With a strong commitment to health equity and advocacy, my expertise lies in capacity building and empowering communities to respond effectively to health crises.</p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <h5 class="mb-3">Research interests</h5>
+                                <ul class="list-check">
+                                    <li>Psychiatric epidemiology</li>
+                                    <li>Global mental health</li>
+                                    <li>Infectious disease epidemiology</li>
+                                    <li>Nutrition, breastfeeding and relactation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mt-3 mt-md-0">
+                                <h5 class="mb-3">Methods</h5>
+                                <ul class="list-check">
+                                    <li>Causal inference</li>
+                                    <li>Survival analysis</li>
+                                    <li>Mediation analysis</li>
+                                    <li>Systematic review and meta-analysis</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mt-3 mt-md-0">
+                                <h5 class="mb-3">Applications</h5>
+                                <ul class="list-check">
+                                    <li>Public health intervention</li>
+                                    <li>Outcome evaluation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="container">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html">Research Projects</a></li>
+                    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="courses.html">Courses</a></li>
                 </ul>
+                <p class="mb-0">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
             </div>
-        </div>
-    </nav>
+        </footer>
 
-    <!-- Header / Hero Section -->
-    <section id="home">
-        <div class="container">
-            <div class="intro">
-                <div class="intro-sub">Hi! I am</div>
-                <h1>Jubayer Mumin</h1>
-                <div class="intro-sub">Medical Doctor, Epidemiologist, and Public Health Researcher</div>
-                
-                <div class="social-icons">
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <!-- ResearchGate -->
-                    <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                    <!-- ORCID -->
-                    <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/jubayermumin/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <!-- Google Scholar -->
-                    <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Moving Mouse Animation -->
-        <div class="mouse-icon">
-            <div class="wheel"></div>
-        </div>
-    </section>
+    </div>
+    <!-- WRAPPER END -->
 
-    <!-- About Section (WHITE) -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row">
-                
-                <!-- Left Column: Photo & Details -->
-                <div class="col-md-4 text-center">
-                    <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo">
-                    <div class="personal-info">
-                        <ul>
-                            <li><strong>Name:</strong> Jubayer Mumin</li>
-                            <li><strong>Location:</strong> Stockholm, Sweden</li>
-                            <li><strong>Email:</strong> jubayer.mumin@ki.se</li>
-                        </ul>
-                        <div class="mt-4">
-                            <!-- Link to CV PDF -->
-                            <a href="cv.pdf" class="btn btn-primary px-4" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Bio -->
-                <div class="col-md-8 mt-4 mt-md-0">
-                    <p>I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
-                    
-                    <p>I have had the privilege of working with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. A defining moment in my career was leading and managing the COVID-19 vaccination campaigns in the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh. This hands-on experience not only honed my leadership skills but also ignited a deep sense of purpose in addressing health disparities faced by displaced populations.</p>
-
-                    <p>With a strong commitment to health equity and advocacy, my expertise lies in capacity building and empowering communities to respond effectively to health crises. I have actively participated in outbreak investigations and response efforts, leveraging my knowledge to help control and manage disease outbreaks.</p>
-
-                    <p>Immunization in humanitarian emergency is another key aspect of my proficiency, ensuring that even in the most challenging circumstances, life-saving vaccinations are administered to those in need.</p>
-
-                    <!-- Three column interest list -->
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <h5 class="mb-3">Research interests</h5>
-                            <ul class="list-check">
-                                <li>Psychiatric epidemiology</li>
-                                <li>Global mental health</li>
-                                <li>Infectious disease epidemiology</li>
-                                <li>Nutrition, breastfeeding and relactation</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 mt-3 mt-md-0">
-                            <h5 class="mb-3">Methods</h5>
-                            <ul class="list-check">
-                                <li>Causal inference</li>
-                                <li>Survival analysis</li>
-                                <li>Mediation analysis</li>
-                                <li>Systematic review and meta-analysis</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 mt-3 mt-md-0">
-                            <h5 class="mb-3">Applications</h5>
-                            <ul class="list-check">
-                                <li>Public health intervention</li>
-                                <li>Outcome evaluation</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section (GRAY) -->
-    <section id="publications" class="bg-light-gray">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    
-                    <!-- Subheading: Scientific Articles -->
-                    <h3 class="publication-section-title">Scientific Articles</h3>
-
-                    <div class="publication-item">
-                        <p>Kader, S. B., Shakurun, N., <strong>Mumin, J.</strong>, & Noor, N. (2025). Joint Effect of Sleep Duration and Sleep Quality on Self-Rated Health Among Canadian Adults: Estimating Relative Excess Risk due to Interaction (RERI) from a Nationwide Survey. <em>Frontiers in Public Health</em>, 13, 1632239. <a href="https://doi.org/10.3389/fpubh.2025.1632239" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Talukdar, I. H., Tarannum, S., Smith, I., Rifat, M. A., Boga, P., <strong>Mumin, J.</strong>, ... & Khan, A. F. (2025). Challenges of healthcare financing in the world’s largest refugee camp: a mixed-method study among healthcare stakeholders for Rohingya refugees in Bangladesh. <em>BMJ open</em>, 15(1), e083021. <a href="https://doi.org/10.1136/bmjopen-2023-083021" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Sujon, H., Khatun, R., & <strong>Mumin, J.</strong> (2024). Non-puerperal adoptive breastfeeding as lactational rescue in the Rohingya refugee camp: 2 case studies. <em>Journal of Human Lactation</em>, 40(1), 51-56. <a href="https://doi.org/10.1177/08903344231216091" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Islam, M. A., <strong>Mumin, J.</strong>, Haque, M. M., Haque, M. A., Khan, A., Bhattacharya, P., & Haque, M. A. (2023). Monkeypox virus (MPXV): A Brief account of global spread, epidemiology, virology, clinical features, pathogenesis, and therapeutic interventions. <em>Infectious Medicine</em>, 2(4), 262-272. <a href="https://doi.org/10.1016/j.imj.2023.11.001" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Islam, M. A., Hasan, M. N., Ahammed, T., Anjum, A., Majumder, A., Siddiqui, M. N. E. A., <strong>Mumin, J.</strong>, ... & Ahmed, F. (2022). Association of household fuel with acute respiratory infection (ARI) under-five years children in Bangladesh. <em>Frontiers in Public Health</em>, 10, 985445. <a href="https://doi.org/10.3389/fpubh.2023.1299521" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Islam, M. A., Sangkham, S., Tiwari, A., Vadiati, M., Hasan, M. N., Noor, S. T. A., <strong>Mumin, J.</strong>, ... & Sherchan, S. P. (2022). Association between global monkeypox cases and meteorological factors. <em>International journal of environmental research and public health</em>, 19(23), 15638. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9740470/" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Rahman, J., <strong>Mumin, J.</strong>, & Fakhruddin, B. (2020). How frequently do we touch facial T-zone: a systematic review. <em>Annals of Global Health</em>, 86(1), 75. <a href="https://doi.org/10.5334/aogh.2956" target="_blank">Link</a></p>
-                    </div>
-
-                    <!-- Subheading: Guidelines and Reports -->
-                    <h3 class="publication-section-title">Guidelines and Reports</h3>
-
-                    <div class="publication-item">
-                        <p>Core reviewer - Thinking Healthy - A Manual for Psychological Management of Perinatal Depression (Bengali version). Published by World Health Organization and Action Against Hunger (2018). <a href="https://apps.who.int/iris/bitstream/handle/10665/152936/WHO-MSD-MER-15.1-ben.pdf" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Core reviewer - Problem Management Plus (PM+) - Individual Psychological Help for Adults Impaired by Distress in Communities Exposed to Adversity (Bengali version). Published by World Health Organization and Action Against Hunger (2018). <a href="https://apps.who.int/iris/bitstream/handle/10665/206417/WHO-MSD-MER-16.2-ben.pdf" target="_blank">Link</a></p>
-                    </div>
-
-                    <div class="publication-item">
-                        <p>Co-Editor - National Health Bulletin 2017. Published by Directorate General of Health Services, Bangladesh. <a href="https://old.dghs.gov.bd/images/docs/Publicaations/HealthBulletin2017Final13_01_2018.pdf" target="_blank">Link</a></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching Section (WHITE) -->
-    <section id="teaching">
-        <div class="container">
-            <h2 class="section-title">Teaching</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <p>Participated in teaching the following undergraduate courses at Karolinska Institute:</p>
-                    <ul>
-                        <li>Global Health (2XX066)</li>
-                        <li>Basvetenskap 6 Mikrobiologi och infektionsimmunologi (2LA005)</li>
-                    </ul>
-                    <p class="mt-4">I have designed and conducted training programs on vaccine-preventable disease surveillance and management of severe acute malnutrition for healthcare professionals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume / Timeline Section (GRAY) -->
-    <section id="resume" class="resume-section">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="timeline">
-                        
-                        <!-- 1. WORK (Right / Inverted): Research Assistant -->
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <span>Jul–Dec 2025</span>
-                            </div>
-                            <a href="https://www.ces.regionstockholm.se/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-ces.png" alt="Region Stockholm" class="timeline-logo">
-                                        <h3>Research Assistant</h3>
-                                        <h4>Centrum för epidemiologi och samhällsmedicin, Region Stockholm</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Worked on two projects on ADHD and relative age in Swedish children.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 2. EDUCATION (Left / Standard): Master KI -->
-                        <li>
-                            <div class="timeline-image">
-                                <span>2023–2025</span>
-                            </div>
-                            <a href="https://education.ki.se/bachelors-masters-studies/programmes-and-courses/masters-programme-in-public-health-sciences" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-ki.png" alt="Karolinska Institutet" class="timeline-logo">
-                                        <h3>Master of Medical Science (Public Health Epidemiology)</h3>
-                                        <h4>Karolinska Institutet | Stockholm, Sweden</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 3. WORK (Right / Inverted): WHO -->
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <span>2020–2023</span>
-                            </div>
-                            <a href="https://www.who.int/bangladesh/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-who.png" alt="WHO" class="timeline-logo">
-                                        <h3>Surveillance and Immunization Medical Officer</h3>
-                                        <h4>World Health Organization | Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Implemented routine immunization programs, vaccine-preventable disease surveillance, and mass vaccination campaigns in the Rohingya refugee camps.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 4. WORK (Right / Inverted): Nutrition Manager -->
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <span>2017–2020</span>
-                            </div>
-                            <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
-                                        <h3>Nutrition and Health Program Manager</h3>
-                                        <h4>Action Against Hunger | Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Implemented Community-based Management of Acute Malnutrition (CMAM) projects in the Rohingya refugee camps.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 5. EDUCATION (Left / Standard): Master NIPSOM -->
-                        <li>
-                            <div class="timeline-image">
-                                <span>2016–2018</span>
-                            </div>
-                            <a href="https://nipsom.gov.bd/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-nipsom.jpg" alt="NIPSOM" class="timeline-logo">
-                                        <h3>Master of Public Health (Health Service Management and Policy)</h3>
-                                        <h4>National Institute of Preventive and Social Medicine | Dhaka, Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 6. WORK (Right / Inverted): Master Trainer -->
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <span>2016–2017</span>
-                            </div>
-                            <a href="https://www.actioncontrelafaim.org/en/our-operations/bangladesh/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-aah.png" alt="Action Against Hunger" class="timeline-logo">
-                                        <h3>Master Trainer</h3>
-                                        <h4>Action Against Hunger | Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>Organized and conducted training sessions for government health staff on inpatient management of severe acute malnutrition.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 7. WORK (Right / Inverted): Medical Doctor Internship -->
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <span>2014–2015</span>
-                            </div>
-                            <a href="https://fmc.college.gov.bd/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo">
-                                        <h3>Medical Doctor (Internship)</h3>
-                                        <h4>Faridpur Medical College Hospital | Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>A 52-week rotatory clinical and public health internship program in medicine, surgery, obstetrics and gynecology, pediatrics, and psychiatry.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- 8. EDUCATION (Left / Standard): Bachelor -->
-                        <li>
-                            <div class="timeline-image">
-                                <span>2009–2015</span>
-                            </div>
-                            <a href="https://fmc.college.gov.bd/" target="_blank">
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <img src="logo-fmc.png" alt="Faridpur Medical College" class="timeline-logo">
-                                        <h3>Bachelor of Medicine and Surgery (Medical Doctor)</h3>
-                                        <h4>Faridpur Medical College | Bangladesh</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section (WHITE) -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="row text-center">
-                <!-- Skill 1 -->
-                <div class="col-md-4 col-12 mb-2">
-                    <i class="fas fa-heartbeat fa-2x mb-2 text-primary"></i>
-                    <h5>Public Health Research</h5>
-                </div>
-                <!-- Skill 2 -->
-                <div class="col-md-4 col-12 mb-2">
-                    <i class="fas fa-chart-bar fa-2x mb-2 text-primary"></i>
-                    <h5>Data Analysis (R, Stata, SPSS)</h5>
-                </div>
-                <!-- Skill 3 -->
-                <div class="col-md-4 col-12 mb-2">
-                    <i class="fas fa-tasks fa-2x mb-2 text-primary"></i>
-                    <h5>Project Management</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Language Section (GRAY) -->
-    <section id="languages" class="bg-light-gray">
-        <div class="container">
-            <h2 class="section-title">Languages</h2>
-            <div class="row justify-content-center text-center">
-                <!-- English -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-lg text-muted"></i>
-                        <h6>English</h6>
-                        <div class="lang-level">C1</div>
-                    </div>
-                </div>
-                <!-- Swedish -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-lg text-muted"></i>
-                        <h6>Swedish</h6>
-                        <div class="lang-level">B2</div>
-                    </div>
-                </div>
-                <!-- Arabic -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-lg text-muted"></i>
-                        <h6>Arabic</h6>
-                        <div class="lang-level">A1</div>
-                    </div>
-                </div>
-                <!-- Bengali -->
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="lang-card">
-                        <i class="fas fa-language fa-lg text-muted"></i>
-                        <h6>Bengali</h6>
-                        <div class="lang-level">Native</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (WHITE) -->
-    <section id="contact-info">
-        <div class="container text-center">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="d-flex justify-content-center flex-wrap">
-                <a href="mailto:jubayer.mumin@ki.se" class="btn contact-btn btn-email">
-                    <i class="fas fa-envelope me-2"></i> Email Me
-                </a>
-                <a href="https://m.me/628163871150733" target="_blank" class="btn contact-btn btn-facebook">
-                    <i class="fab fa-facebook-messenger me-2"></i> Message on Facebook
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <!-- Footer Navigation Links -->
-            <ul class="footer-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="projects.html">Research Projects</a></li>
-                <li><a href="#teaching">Teaching</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="courses.html">Courses</a></li>
-            </ul>
-
-            <div class="social-icons mb-3">
-                <!-- GitHub -->
-                <a href="https://github.com/jubayermumin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jubayermumin/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <!-- ResearchGate -->
-                <a href="https://www.researchgate.net/profile/Jubayer-Mumin" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                <!-- ORCID -->
-                <a href="https://orcid.org/0000-0002-3729-8299" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/jubayermumin" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/jubayermumin/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <!-- Google Scholar -->
-                <a href="https://scholar.google.com/citations?hl=en&user=y_cnnkUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
-            </div>
-
-            <p class="mb-0">&copy; 2025 Jubayer Mumin. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="spa-router.js" defer></script>
 </body>
 </html>
