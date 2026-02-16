@@ -1,6 +1,6 @@
 /**
  * SPA Router for Static Sites (GitHub Pages Compatible)
- * * Logic: Intercepts internal links, fetches the HTML in the background,
+ * Logic: Intercepts internal links, fetches the HTML in the background,
  * and swaps the content inside #main-wrapper without a full page reload.
  */
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // 4. Update History URL (Scenario A)
+            // 4. Update History URL
             if (pushHistory) {
                 history.pushState({}, newTitle, url);
             }
@@ -97,7 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.forEach(collapse => new bootstrap.Collapse(collapse, { toggle: false }));
             }
 
-            // 8. End Animation
+            // 8. Re-initialize Badges (Altmetric & Dimensions)
+            initPlugins();
+
+            // 9. End Animation
             fadeIn();
 
         } catch (error) {
@@ -120,3 +123,42 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPage(window.location.href, false);
     });
 });
+
+
+/**
+ * Helper Functions to re-initialize external scripts
+ * This fixes the issue where badges don't load when navigating between tabs.
+ */
+function initPlugins() {
+    // 1. Re-initialize Altmetric Badges
+    if (window._altmetric_embed_init) {
+        window._altmetric_embed_init();
+    } else {
+        // If script is missing but badges exist, load it dynamically
+        if (document.querySelector('.altmetric-embed')) {
+            loadScript('https://embed.altmetric.com/assets/embed.js');
+        }
+    }
+
+    // 2. Re-initialize Dimensions Badges
+    if (window.__dimensions_embed && window.__dimensions_embed.addBadges) {
+        window.__dimensions_embed.addBadges();
+    } else {
+        // If script is missing but badges exist, load it dynamically
+        if (document.querySelector('.__dimensions_badge_embed__')) {
+            loadScript('https://badge.dimensions.ai/badge.js');
+        }
+    }
+}
+
+// Helper to load external scripts dynamically if they aren't present
+function loadScript(src) {
+    // Check if script already exists to avoid duplicates
+    if (document.querySelector(`script[src="${src}"]`)) return;
+
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.appendChild(script);
+}
