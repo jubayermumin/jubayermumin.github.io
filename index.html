@@ -64,21 +64,24 @@
         <section id="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
-                <div class="row">
-                    <div class="col-md-4 text-center d-flex flex-column">
+                <!-- align-items-start forces everything to the top, removing the gap above the photo -->
+                <div class="row align-items-start">
+                    <!-- Removed the flex-column stretch classes so items stack tightly -->
+                    <div class="col-md-4 text-center">
                         <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo">
-                        <div class="personal-info d-flex flex-column flex-grow-1">
-                            <div>
-                                <ul>
-                                    <li><strong>Name:</strong> Jubayer Mumin</li>
-                                    <li><strong>Location:</strong> Stockholm, Sweden</li>
-                                    <li><strong>Email:</strong> jubayer.mumin@ki.se</li>
-                                </ul>
-                                <div class="mt-4">
-                                    <a href="cv.pdf" class="btn btn-primary px-4" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
-                                </div>
+                        <div class="personal-info">
+                            <ul>
+                                <li><strong>Name:</strong> Jubayer Mumin</li>
+                                <li><strong>Location:</strong> Stockholm, Sweden</li>
+                                <li><strong>Email:</strong> jubayer.mumin@ki.se</li>
+                            </ul>
+                            <!-- CV Button -->
+                            <div class="mt-3 mb-4">
+                                <a href="cv.pdf" class="btn btn-primary px-4" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
                             </div>
-                            <div class="mt-auto pt-4 d-flex justify-content-center w-100">
+                            
+                            <!-- LinkedIn Profile Badge -->
+                            <div class="d-flex justify-content-center w-100">
                                 <div class="badge-base LI-profile-badge"
                                      data-locale="en_US"
                                      data-size="medium"
