@@ -63,15 +63,29 @@
 
         <section id="about">
             <div class="container">
-                <!-- Moved the header outside the columns so it centers perfectly -->
-                <h2 class="section-title text-center">About Me</h2>
                 
+                <style>
+                    /* Mathematically centers the heading relative to the entire page while structurally remaining in the right 2/3 column */
+                    @media (min-width: 768px) {
+                        .about-heading-centered {
+                            margin-left: -50%;
+                            width: 150%;
+                            pointer-events: none; /* Prevents the heading box from blocking clicks on the photo */
+                        }
+                        .about-left-col {
+                            position: relative;
+                            z-index: 10;
+                        }
+                    }
+                </style>
+
                 <div class="row">
                     <!-- LEFT COLUMN: 1/3rd width (col-md-4) -->
-                    <div class="col-md-4 text-center d-flex flex-column">
-                        <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo img-fluid mb-4">
+                    <div class="col-md-4 text-center d-flex flex-column about-left-col">
+                        <!-- Photo is now perfectly aligned with the top of the row -->
+                        <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo img-fluid mb-4 mt-0">
                         
-                        <!-- Large LinkedIn Profile Badge -->
+                        <!-- Large, Dark LinkedIn Profile Badge -->
                         <div class="d-flex justify-content-center w-100">
                             <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="jubayermumin" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://se.linkedin.com/in/jubayermumin?trk=profile-badge"></a></div>
                         </div>
@@ -84,7 +98,10 @@
 
                     <!-- RIGHT COLUMN: 2/3rds width (col-md-8) -->
                     <div class="col-md-8 mt-4 mt-md-0 d-flex flex-column">
-                        <p>I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
+                        <!-- Heading structurally inside the right column, visually centered to the page -->
+                        <h2 class="section-title text-center about-heading-centered mt-0">About Me</h2>
+                        
+                        <p class="mt-2">I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
                         <p>I have had the privilege of working with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. A defining moment in my career was leading and managing the COVID-19 vaccination campaigns in the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh.</p>
                         <p>With a strong commitment to health equity and advocacy, my expertise lies in capacity building and empowering communities to respond effectively to health crises.</p>
 
