@@ -63,42 +63,44 @@
 
         <section id="about">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <!-- align-items-start forces everything to the top, removing the gap above the photo -->
-                <div class="row align-items-start">
-                    <!-- Removed the flex-column stretch classes so items stack tightly -->
-                    <div class="col-md-4 text-center">
-                        <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo">
-                        <div class="personal-info">
-                            <ul>
-                                <li><strong>Name:</strong> Jubayer Mumin</li>
-                                <li><strong>Location:</strong> Stockholm, Sweden</li>
-                                <li><strong>Email:</strong> jubayer.mumin@ki.se</li>
-                            </ul>
-                            <!-- CV Button -->
-                            <div class="mt-3 mb-4">
-                                <a href="cv.pdf" class="btn btn-primary px-4" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
-                            </div>
-                            
-                            <!-- LinkedIn Profile Badge -->
-                            <div class="d-flex justify-content-center w-100">
-                                <div class="badge-base LI-profile-badge"
-                                     data-locale="en_US"
-                                     data-size="medium"
-                                     data-theme="light"
-                                     data-type="HORIZONTAL"
-                                     data-vanity="jubayermumin"
-                                     data-version="v1">
-                                    <a class="badge-base__link LI-simple-link"
-                                       href="https://se.linkedin.com/in/jubayermumin?trk=profile-badge">
-                                        Jubayer Mumin
-                                    </a>
+                <div class="row">
+                    <!-- LEFT COLUMN: 1/4th width (col-md-3) -->
+                    <div class="col-md-3 text-center d-flex flex-column">
+                        <div>
+                            <img src="jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo img-fluid mb-3">
+                            <div class="personal-info">
+                                <ul class="list-unstyled text-md-start" style="font-size: 0.95rem;">
+                                    <li class="mb-1"><strong>Name:</strong> Jubayer Mumin</li>
+                                    <li class="mb-1"><strong>Location:</strong> Stockholm, Sweden</li>
+                                    <li class="mb-1"><strong>Email:</strong> jubayer.mumin@ki.se</li>
+                                </ul>
+                                <!-- CV Button -->
+                                <div class="mt-3 mb-4">
+                                    <a href="cv.pdf" class="btn btn-primary w-100" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <!-- LinkedIn Profile Badge pushed to bottom using mt-auto -->
+                        <div class="mt-auto d-flex justify-content-center w-100">
+                            <div class="badge-base LI-profile-badge"
+                                 data-locale="en_US"
+                                 data-size="medium"
+                                 data-theme="light"
+                                 data-type="HORIZONTAL"
+                                 data-vanity="jubayermumin"
+                                 data-version="v1">
+                                <a class="badge-base__link LI-simple-link"
+                                   href="https://se.linkedin.com/in/jubayermumin?trk=profile-badge">
+                                    Jubayer Mumin
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-8 mt-4 mt-md-0">
+                    <!-- RIGHT COLUMN: 3/4th width (col-md-9) -->
+                    <div class="col-md-9 mt-4 mt-md-0 d-flex flex-column">
+                        <h2 class="section-title text-md-start mt-0">About Me</h2>
                         <p>I have recently completed my master’s in Public Health Epidemiology at Karolinska Institute in Sweden. I am a medical doctor with nine years' experience in research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
                         <p>I have had the privilege of working with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. A defining moment in my career was leading and managing the COVID-19 vaccination campaigns in the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh.</p>
                         <p>With a strong commitment to health equity and advocacy, my expertise lies in capacity building and empowering communities to respond effectively to health crises.</p>
