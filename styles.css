@@ -586,3 +586,44 @@ footer {
 .publication-authors strong {
     font-weight: 700;
 }
+
+/* ============================
+   ABOUT SECTION LAYOUT
+============================ */
+
+
+#about .profile-photo {
+
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+
+}
+
+
+#about .linkedin-container {
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+}
+
+
+#about p {
+
+    line-height:1.7;
+
+}
+
+
+@media (max-width:991px){
+
+    #about .linkedin-container {
+
+        margin-top:30px;
+
+    }
+
+}
