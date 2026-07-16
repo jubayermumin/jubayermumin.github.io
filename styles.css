@@ -627,3 +627,342 @@ footer {
     }
 
 }
+
+/* ==========================================
+   NEW HOMEPAGE HERO SECTION
+   ========================================== */
+
+
+#hero {
+
+    min-height: calc(100vh - 75px);
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:90px;
+
+    background:#f8f9fa;
+
+}
+
+
+
+.hero-name {
+
+    font-size:3.8rem;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:15px;
+
+    letter-spacing:-1px;
+
+}
+
+
+
+.hero-role {
+
+    font-size:1.8rem;
+
+    font-weight:400;
+
+    color:#555;
+
+    line-height:1.4;
+
+}
+
+
+
+.hero-text {
+
+    margin-top:25px;
+
+    max-width:600px;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+
+
+/* Research tags */
+
+.hero-tags {
+
+    margin-top:25px;
+
+}
+
+
+
+.hero-tags span {
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    margin:5px;
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    font-size:.9rem;
+
+    color:#333;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Buttons */
+
+.hero-buttons {
+
+    margin-top:35px;
+
+}
+
+
+.hero-buttons .btn {
+
+    border-radius:30px;
+
+    padding:12px 28px;
+
+    margin-right:12px;
+
+    font-weight:500;
+
+}
+
+
+
+
+/* ==========================================
+   RESEARCH ORB (3D EFFECT)
+   ========================================== */
+
+
+.research-orb {
+
+
+    width:420px;
+
+    height:420px;
+
+    margin:auto;
+
+    position:relative;
+
+    border-radius:50%;
+
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(13,110,253,0.18),
+        rgba(13,110,253,0.03),
+        transparent 70%
+    );
+
+
+    animation:
+    floating-orb 6s ease-in-out infinite;
+
+
+}
+
+
+
+.orb-core {
+
+
+    position:absolute;
+
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+
+    width:130px;
+
+    height:130px;
+
+
+    background:white;
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:45px;
+
+    color:#0d6efd;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,0.15);
+
+
+}
+
+
+
+
+.orb-card {
+
+
+    position:absolute;
+
+
+    background:white;
+
+
+    padding:12px 20px;
+
+
+    border-radius:30px;
+
+
+    font-size:.9rem;
+
+
+    color:#333;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.12);
+
+
+}
+
+
+
+/* Position of floating cards */
+
+
+.card-one {
+
+    top:45px;
+
+    left:140px;
+
+}
+
+
+.card-two {
+
+    right:20px;
+
+    top:190px;
+
+}
+
+
+.card-three {
+
+    bottom:45px;
+
+    left:120px;
+
+}
+
+
+.card-four {
+
+    left:20px;
+
+    top:190px;
+
+}
+
+
+
+/* Floating animation */
+
+
+@keyframes floating-orb {
+
+
+0%,100% {
+
+    transform:translateY(0);
+
+}
+
+
+50% {
+
+    transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+
+/* Mobile adjustment */
+
+@media(max-width:991px){
+
+
+    #hero {
+
+        padding-top:120px;
+
+        text-align:center;
+
+    }
+
+
+    .hero-name {
+
+        font-size:2.8rem;
+
+    }
+
+
+    .research-orb {
+
+
+        width:300px;
+
+        height:300px;
+
+        margin-top:50px;
+
+
+    }
+
+
+}
