@@ -358,24 +358,24 @@ section {
     line-height: 1;
 }
 
-/* Desktop: 30% / 40% / 30% */
+/* Desktop: 27% / 46% / 27% */
 @media (min-width: 992px) {
     #about .about-profile-column {
-        flex: 0 0 30%;
-        width: 30%;
-        max-width: 30%;
+        flex: 0 0 27%;
+        width: 27%;
+        max-width: 27%;
     }
 
     #about .about-main-column {
-        flex: 0 0 40%;
-        width: 40%;
-        max-width: 40%;
+        flex: 0 0 46%;
+        width: 46%;
+        max-width: 46%;
     }
 
     #about .about-summary-column {
-        flex: 0 0 30%;
-        width: 30%;
-        max-width: 30%;
+        flex: 0 0 27%;
+        width: 27%;
+        max-width: 27%;
     }
 
     #about .about-profile-column,
