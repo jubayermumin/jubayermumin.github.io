@@ -7,7 +7,10 @@
     <meta name="author" content="Jubayer Mumin">
     <title>Jubayer Mumin | Personal Website</title>
 
-    <link rel="icon" href="/jubayermumin.jpg" type="image/jpeg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -63,80 +66,119 @@
 
         <section id="about">
             <div class="container">
-                
-                <style>
-                    /* Custom 5-part grid system for medium screens and larger */
-                    @media (min-width: 768px) {
-                        .col-md-1-5 {
-                            flex: 0 0 20%;
-                            max-width: 20%;
-                        }
-                        .col-md-3-5 {
-                            flex: 0 0 60%;
-                            max-width: 60%;
-                        }
-                    }
-                </style>
-
-                <!-- Heading moved above the row to center perfectly and push content down equally -->
                 <h2 class="section-title text-center mt-0">About Me</h2>
 
-                <div class="row mt-4">
-                    <!-- LEFT COLUMN: 1/5th width (Photo & CV) -->
-                    <div class="col-12 col-md-1-5 text-center d-flex flex-column mb-4 mb-md-0">
-                        <img src="/jubayermumin.jpg" alt="Jubayer Mumin" class="profile-photo img-fluid mb-4 mt-0">
-                        
-                        <div class="w-100">
-                            <a href="/cv.pdf" class="btn btn-primary w-100" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
+                <div class="row about-row mt-4">
+                    <!-- LEFT SECTION: Profile photo, original LinkedIn badge, and CV -->
+                    <div class="col-12 about-column about-profile-column">
+                        <div class="about-column-inner about-profile-panel">
+                            <img src="/jubayermumin.png"
+                                 alt="Jubayer Mumin"
+                                 class="profile-photo img-fluid">
+
+                            <div class="linkedin-badge-wrapper">
+                                <div class="badge-base LI-profile-badge"
+                                     data-locale="en_US"
+                                     data-size="medium"
+                                     data-theme="light"
+                                     data-type="HORIZONTAL"
+                                     data-vanity="jubayermumin"
+                                     data-version="v1">
+                                    <a class="badge-base__link LI-simple-link"
+                                       href="https://se.linkedin.com/in/jubayermumin?trk=profile-badge">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a href="/cv.pdf"
+                               class="btn btn-primary about-cv-button"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fas fa-download me-2" aria-hidden="true"></i>Download CV
+                            </a>
                         </div>
                     </div>
 
-                    <!-- MIDDLE COLUMN: 3/5ths width (Bio & Sections) -->
-                    <!-- Added pe-md-5 and pe-lg-5 to ensure significant minimum space between text and the right column -->
-                    <div class="col-12 col-md-3-5 d-flex flex-column px-md-4 pe-md-5 mb-4 mb-md-0" style="text-align: justify;">
-                        
-                        <p class="mt-0">I am a medical doctor with experience in epidemiological research, public health response, and clinical medicine. My research area primarily focuses on epidemiology, mental health, and infectious diseases.</p>
-                        <p>I worked with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings, including leading and managing the COVID-19 vaccination campaigns in one of the world's largest refugee camps, the Rohingya refugee camps in Cox's Bazar, Bangladesh.</p>
-                        <p>With a commitment to health equity, my expertise lies in health researh, capacity building and empowering communities to respond effectively to health crises.</p>
+                    <!-- MIDDLE SECTION: Description, research interests, and methods -->
+                    <div class="col-12 about-column about-main-column">
+                        <div class="about-column-inner about-main-content">
+                            <p class="mt-0">
+                                A medical doctor with experience in epidemiological research, public health response, and clinical medicine. My research primarily focuses on epidemiology, mental health, and infectious diseases.
+                            </p>
 
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <h5 class="mb-3">Research interests</h5>
-                                <ul class="list-check text-start">
-                                    <li>Psychiatric epidemiology</li>
-                                    <li>Global mental health</li>
-                                    <li>Infectious disease epidemiology</li>
-                                    <li>Nutrition, breastfeeding and relactation</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mt-3 mt-md-0">
-                                <h5 class="mb-3">Methods</h5>
-                                <ul class="list-check text-start">
-                                    <li>Causal inference</li>
-                                    <li>Survival analysis</li>
-                                    <li>Mediation analysis</li>
-                                    <li>Systematic review and meta-analysis</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 mt-3 mt-md-0">
-                                <h5 class="mb-3">Applications</h5>
-                                <ul class="list-check text-start">
-                                    <li>Public health intervention</li>
-                                    <li>Outcome evaluation</li>
-                                </ul>
+                            <p>
+                                I have worked with international NGOs and UN agencies, contributing to nutrition and health interventions in diverse settings. This includes leading and managing COVID-19 vaccination campaigns in one of the world’s largest refugee settlements—the Rohingya refugee camps in Cox’s Bazar, Bangladesh.
+                            </p>
+
+                            <p>
+                                With a commitment to health equity, my expertise lies in health research, capacity building, and empowering communities to respond effectively to health crises.
+                            </p>
+                            <div class="row about-focus-grid">
+                                <div class="col-md-6 about-focus-block">
+                                    <h5>Research interests</h5>
+                                    <ul class="list-check text-start">
+                                        <li>Psychiatric epidemiology</li>
+                                        <li>Global mental health</li>
+                                        <li>Nutrition and breastfeeding</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6 about-focus-block mt-4 mt-md-0">
+                                    <h5>Methods</h5>
+                                    <ul class="list-check text-start">
+                                        <li>Causal inference</li>
+                                        <li>Survival analysis</li>
+                                        <li>Systematic review and meta-analysis</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- RIGHT COLUMN: 1/5th width (LinkedIn Badge) -->
-                    <!-- Removed justify-content-center to allow the badge to align at the exact same top level as the photo and text -->
-                    <div class="col-12 col-md-1-5 text-center d-flex flex-column align-items-center ps-md-4">
-                        <div class="d-flex justify-content-center w-100 mt-0">
-                            <!-- Medium / Light LinkedIn Badge -->
-                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="jubayermumin" data-version="v1">
-                                <a class="badge-base__link LI-simple-link" href="https://se.linkedin.com/in/jubayermumin?trk=profile-badge"></a>
+                    <!-- RIGHT SECTION: Career summary -->
+                    <div class="col-12 about-column about-summary-column">
+                        <aside class="about-column-inner career-summary-card" aria-labelledby="career-summary-title">
+                            <h3 id="career-summary-title" class="career-summary-title">Career Summary</h3>
+
+                            <div class="career-summary-item">
+                                <div class="career-summary-heading">
+                                    <i class="fas fa-briefcase" aria-hidden="true"></i>
+                                    <h4>Professional Experience</h4>
+                                </div>
+                                <ul class="career-summary-list">
+                                    <li><strong>10+ years</strong> with UN agencies, civil society organizations, and academia.</li>
+                                    <li>Experience in health-emergency response and complex humanitarian settings.</li>
+                                </ul>
                             </div>
-                        </div>
+
+                            <div class="career-summary-item">
+                                <div class="career-summary-heading">
+                                    <i class="fas fa-globe-europe" aria-hidden="true"></i>
+                                    <h4>Countries</h4>
+                                </div>
+                                <div class="career-countries" aria-label="Countries of professional and academic experience">
+                                    <div class="career-country">
+                                        <span class="career-country-flag" role="img" aria-label="Sweden flag">🇸🇪</span>
+                                        <span>Sweden</span>
+                                    </div>
+                                    <div class="career-country">
+                                        <span class="career-country-flag" role="img" aria-label="Bangladesh flag">🇧🇩</span>
+                                        <span>Bangladesh</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-summary-item">
+                                <div class="career-summary-heading">
+                                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                    <h4>Research Impact</h4>
+                                </div>
+                                <ul class="career-summary-list">
+                                    <li><strong>10+ publications</strong> in peer-reviewed journals.</li>
+                                    <li>Experience leading, coordinating, and organizing epidemiological and public health research projects.</li>
+                                </ul>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -391,6 +433,6 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>
