@@ -1,183 +1,261 @@
 /* ==========================================
-   HOMEPAGE HERO
+   GLOBAL STYLES
 ========================================== */
 
-#hero {
-    min-height: 620px;
-    display: flex;
-    align-items: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    background: #f8f9fa;
-}
-
-.hero-text-col {
-    text-align: left;
-}
-
-.hero-name {
-    font-size: 3.8rem;
-    font-weight: 700;
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
     color: #222;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-.hero-role {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #555;
-    line-height: 1.4;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
-.hero-text {
-    margin-top: 25px;
-    max-width: 650px;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #555;
+p {
+    margin-bottom: 1rem;
 }
 
-.hero-tags {
-    margin-top: 25px;
+a {
+    text-decoration: none;
 }
 
-.hero-tags span {
-    display: inline-block;
-    padding: 8px 18px;
-    margin: 5px;
-    background: #ffffff;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
 }
 
-.hero-buttons {
-    margin-top: 35px;
+/* ==========================================
+   NAVBAR
+========================================== */
+.navbar {
+    padding: 0.8rem 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.hero-buttons .btn {
-    border-radius: 30px;
-    padding: 12px 28px;
-    margin-right: 12px;
+.navbar .nav-link {
+    color: #0d6efd;
     font-weight: 500;
+    margin-left: 10px;
 }
 
-/* Research Orb */
-.research-orb {
-    width: 480px;
-    height: 480px;
-    margin: auto;
-    position: relative;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(13,110,253,0.2), rgba(13,110,253,0.05), transparent 70%);
-    box-shadow: inset 0 0 50px rgba(13,110,253,0.1);
-    animation: floating-orb 6s ease-in-out infinite;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    text-decoration: underline;
 }
 
-.orb-core {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 130px;
-    height: 130px;
-    background: white;
+/* ==========================================
+   ABOUT ME SECTION
+========================================== */
+#about {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+#about .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#about .profile-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
     border-radius: 50%;
+}
+
+#about .linkedin-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 45px;
-    color: #0d6efd;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    align-items: flex-start;
+    margin-top: 0;
 }
 
-.orb-card {
+#about p {
+    line-height: 1.7;
+}
+
+#about .row .col-md-4 h5 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.list-check li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.list-check li::before {
+    content: "✓";
     position: absolute;
-    background: #ffffff;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #333;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    left: 0;
+    color: #0d6efd;
 }
 
-/* Position cards around orb */
-.card-one { top: 45px; left: 140px; }
-.card-two { right: 20px; top: 190px; }
-.card-three { bottom: 45px; left: 120px; }
-.card-four { left: 20px; top: 190px; }
-
-/* Orb animation */
-@keyframes floating-orb {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* Social icons adjustments */
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
 .social-icons {
     margin-top: 30px;
 }
+
 .social-icons a {
     color: #0d6efd;
     font-size: 1.8rem;
     margin-right: 20px;
     transition: 0.3s ease;
 }
+
 .social-icons a:hover {
     transform: translateY(-3px);
     color: #0056b3;
 }
 
 /* ==========================================
-   RESEARCH IMPACT SECTION
+   PUBLICATIONS PAGE
 ========================================== */
-
-#research-impact {
-    padding: 80px 0;
-    background: #f1f5f9;
-}
-
-#research-impact .section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-#research-impact .impact-card {
-    background: white;
-    padding: 25px;
-    margin: 15px 0;
+.publication-entry {
+    margin-bottom: 26px;
+    background: #fff;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
 }
 
-#research-impact .impact-card:hover {
+.publication-entry:hover {
     transform: translateY(-5px);
 }
 
-#research-impact h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+.publication-meta {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #555;
+    line-height: 1.35;
+    margin-bottom: 3px;
 }
 
-#research-impact p {
+.publication-title {
+    display: block;
     font-size: 1rem;
+    font-weight: 400;
+    color: #222;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    line-height: 1.4;
+    margin-bottom: 3px;
+}
+
+.publication-authors {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.publication-authors strong {
+    font-weight: 700;
+}
+
+.conference-entry .presentation-title {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ==========================================
+   TIMELINE / RESUME
+========================================== */
+.timeline {
+    margin-top: 40px;
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.timeline-item .year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0d6efd;
+    width: 100px;
+}
+
+.timeline-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.btn-primary {
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-outline-primary {
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
     color: #555;
 }
 
-/* Responsive adjustments */
+/* ==========================================
+   RESPONSIVE
+========================================== */
 @media (max-width: 991px) {
-    #hero {
-        padding-top: 120px;
-        text-align: center;
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .hero-name { font-size: 2.8rem; }
-    .research-orb { width: 350px; height: 350px; margin-top: 50px; }
+    #about .linkedin-container {
+        margin-top: 30px;
+    }
 }
